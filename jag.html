@@ -1,0 +1,5392 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+	<style type="text/css">
+	
+		#dad{
+
+			border:5px solid darkgreen;
+			width: 280px;
+			height:280px;
+			border-radius: 5px;
+			display: inline-block;
+			background-color: green;
+			font-weight: bold;
+			color: #fff;
+			text-align: center;
+			}	
+			
+			#mum{
+
+					border:5px solid hotpink;
+					width: 280px;
+					height:280px;
+					border-radius: 5px;
+					display: inline-block;
+					background-color:red;
+					font-weight: bold;
+					color: #fff;
+					text-align: center;
+				}
+
+		#girl
+			{
+				border:5px solid hotpink; 
+				width: 280px;
+				height:280px;
+				border-radius: 5px;
+				display: inline-block;
+				background-color: aqua;
+				font-weight: bold;
+				color: #fff;
+				text-align: center;
+			}
+
+		#boy
+			{
+				border:5px solid red;
+				width: 280px;
+				height:280px;
+				border-radius: 5px;
+				display: inline-block;
+				background-color:blue;
+				font-weight: bold;
+				color: #fff;
+				text-align: center;
+			}
+		.jsPtags {
+			position:absolute;
+			top:20%;
+			left:8%;
+		}
+
+		#ticTacTable td {
+			border-radius: 4px;
+		}
+ 
+
+	</style>
+</head>
+<body>
+
+<!--<audio controls id="myAudio" style="display: none;">-->
+<audio controls loop id="myAudio" style="display: none;">
+  <source src="technoMusic.mp3" type="audio/mp3">
+  Your browser does not support the audio tag.
+</audio>
+
+<audio controls id="myFlashAudio" style="display: none;">
+  <source src="flash.mp3" type="audio/mp3">
+  Your browser does not support the audio tag.
+</audio>
+
+<audio controls id="myGoldAudio" style="display: none;">
+  <source src="goldScore.wav" type="audio/wav">
+  Your browser does not support the audio tag.
+</audio>
+
+
+
+	<div style="margin: 0 auto;height: 100px;width:500px;">
+		<div style="display:inline-block;float:left;width:200;height:200;border-radius:4px;font-weight:bolder;color:#fff;position:relative;line-height: 1em;"><button id="scoreO" style="width:200;height:200;border-radius:4px;background-color: blue;font-weight:bolder;color:#fff;">0</button></div>
+
+		<div style="display:inline-block;float:right;width:200;height:200;border-radius:4px;font-weight:bolder;color:#fff;position:relative;line-height: 1em;">
+		<button id="scoreX" style="width:200;height:200;border-radius:4px;background-color: red;font-weight:bolder;color:#fff;">0</button>
+		</div>
+	</div>
+
+<div style='position:relative;width:300px;margin: 0 auto;'><!--div to house the table-->
+<table border="2" id="ticTacTable" style="width: 300px;height:300px;text-align: center;">
+		<caption>JAG</caption>
+
+	<tr><td id="a" onclick="callAClick(e)">A</td>
+		<td id="b" onclick="callBClick(e)">B</td>
+		<td id="c" onclick="callCClick(e)">C</td>
+		<td id="d" onclick="callDClick(e)">D</td>
+		<td id="e" onclick="callEClick(e)">E</td>
+		<td id="f" onclick="callFClick(e)">F</td>
+	</tr>
+
+	<tr><td id="g" onclick="callGClick(e)">G</td>
+		<td id="h" onclick="callHClick(e)">H</td>
+		<td id="i" onclick="callIClick(e)">I</td>
+		<td id="j" onclick="callJClick(e)">J</td>
+		<td id="k" onclick="callKClick(e)">K</td>
+		<td id="l" onclick="callLClick(e)">L</td>
+	</tr>
+
+	<tr><td id="m" onclick="callMClick(e)">M</td>
+		<td id="n" onclick="callNClick(e)">N</td>
+		<td id="o" onclick="callOClick(e)">o</td>
+		<td id="p" onclick="callPClick(e)">P</td>
+		<td id="q" onclick="callQClick(e)">Q</td>
+		<td id="r" onclick="callRClick(e)">R</td>
+	</tr>
+
+	<tr><td id="s" onclick="callSClick(e)">S</td>
+		<td id="t" onclick="callTClick(e)">T</td>
+		<td id="u" onclick="callUClick(e)">U</td>
+		<td id="v" onclick="callVClick(e)">V</td>
+		<td id="w" onclick="callWClick(e)">W</td>
+		<td id="x" onclick="callXClick(e)">x</td>
+	</tr>
+
+	<tr><td id="y" onclick="callYClick(e)">Y</td>
+		<td id="z" onclick="callZClick(e)">Z</td>
+		<td id="aa" onclick="callAAClick(e)">AA</td>
+		<td id="bb" onclick="callBBClick(e)">BB</td>
+		<td id="cc" onclick="callCCClick(e)">CC</td>
+		<td id="dd" onclick="callDDClick(e)">DD</td>
+	</tr>
+
+	<tr><td id="ee" onclick="callEEClick(e)">EE</td>
+		<td id="ff" onclick="callFFClick(e)">FF</td>
+		<td id="gg" onclick="callGGClick(e)">GG</td>
+		<td id="hh" onclick="callHHClick(e)">HH</td>
+		<td id="ii" onclick="callIIClick(e)">II</td>
+		<td id="jj" onclick="callJJClick(e)">JJ</td>
+	</tr>
+
+	</table>
+	<button onmouseout="restoreBtnColor()" onmouseover="changeRefreshBtnColor()" id='replayBtn' style=' display:none; position:absolute; width: 300px;height: 50px;border-radius:6px;background-color: #303;color:#fff;' onclick='refreshPage()'>REPLAY</button>
+</div><!--end of div to house the table-->
+	
+
+
+	
+
+	
+
+
+
+<script type="text/javascript">
+	/*
+	This is a flag. 
+	All the functions will first of all check this flag
+		if it is null, there4 its the first turn, so play o
+		if its o then play X
+		if its x then play o
+	*/
+
+	let oScores = {
+		'diagonalForwardMatch':[],
+		'diagonalBackwardMatch':[],
+		'diagonalBackGold':'no',
+		'diagonalFrontGold':'no',
+		'score': 0,
+		'horizontalTopLeft': 'no',
+		'horizontalTopLeftHalf': 'no',
+		'horizontalTopRightHalf': 'no',
+		'horizontalTopRight': 'no',
+
+		'verticalRightTop': 'no',
+		'verticalRightTopHalf': 'no',
+		'verticalRightBottomHalf': 'no',
+		'verticalRightBottom': 'no',
+
+		'horizontalBottomRight': 'no',
+		'horizontalBottomRightHalf': 'no',
+		'horizontalBottomLeftHalf': 'no',
+		'horizontalBottomLeft': 'no',
+
+		'verticalLeftTop': 'no',
+		'verticalLeftTopHalf': 'no',
+		'verticalLeftBottomHalf': 'no',
+		'verticalLeftBottom': 'no',
+
+		'horizontalTopMidLeft':'no',
+		'horizontalTopMidLeftHalf':'no',
+		'horizontalTopMidRightHalf':'no',
+		'horizontalTopMidRight':'no',
+
+		'horizontalTopBottomLeft':'no',
+		'horizontalTopBottomLeftHalf':'no',
+		'horizontalTopBottomRightHalf':'no',
+		'horizontalTopBottomRight':'no',
+
+		'horizontalBottomTopLeft':'no',
+		'horizontalBottomTopLeftHalf':'no',
+		'horizontalBottomTopRightHalf':'no',
+		'horizontalBottomTopRight':'no',
+
+		'horizontalBottomMidLeft':'no',
+		'horizontalBottomMidLeftHalf':'no',
+		'horizontalBottomMidRightHalf':'no',
+		'horizontalBottomMidRight':'no',
+
+		'verticalLeftMidTop':'no',
+		'verticalLeftMidTopHalf':'no',
+		'verticalLeftMidBottomHalf':'no',
+		'verticalLeftMidBottom':'no',
+
+		'verticalLeftRightTop':'no',
+		'verticalLeftRightTopHalf':'no',
+		'verticalLeftRightBottomHalf':'no',
+		'verticalLeftRightBottom':'no',
+
+		'verticalRightLeftTop':'no',
+		'verticalRightLeftTopHalf':'no',
+		'verticalRightLeftBottomHalf':'no',
+		'verticalRightLeftBottom':'no',
+
+		'verticalRightMidTop':'no',
+		'verticalRightMidTopHalf':'no',
+		'verticalRightMidBottomHalf':'no',
+		'verticalRightMidBottom':'no',
+
+		
+		//The diagonal back
+		'diagonalBackLargestTop':'no',
+		'diagonalBackLargestTopHalf':'no',
+		'diagonalBackLargestBottomHalf':'no',
+		'diagonalBackLargestBottom':'no',
+
+		//Above the diagonal back
+		'diagonalBackTopSmallTop':'no',
+		'diagonalBackTopSmallMid':'no',
+		'diagonalBackTopSmallBottom':'no',
+
+		'diagonalBackTopSmallerTop':'no',
+		'diagonalBackTopSmallerBottom':'no',
+
+		'diagonalBackTopSmallest':'no',
+
+		
+		//below the diagonal back
+		'diagonalBackBottomSmallTop':'no',
+		'diagonalBackBottomSmallMid':'no',
+		'diagonalBackBottomSmallBottom':'no',
+
+		'diagonalBackBottomSmallerTop':'no',
+		'diagonalBackBottomSmallerBottom':'no',
+
+		'diagonalBackBottomSmallest':'no',
+
+
+		//The diagonal forward
+		'diagonalForwardLargestTop':'no',
+		'diagonalForwardLargestTopHalf':'no',
+		'diagonalForwardLargestBottomHalf':'no',
+		'diagonalForwardLargestBottom':'no',
+
+		//above the diagonal forward
+		'diagonalForwardTopSmallTop':'no',
+		'diagonalForwardTopSmallMid':'no',
+		'diagonalForwardTopSmallBottom':'no',
+
+		'diagonalForwardTopSmallerTop':'no',
+		'diagonalForwardTopSmallerBottom':'no',
+
+		'diagonalForwardTopSmallest':'no',
+
+		//below the diagonal forward
+		'diagonalForwardBottomSmallTop':'no',
+		'diagonalForwardBottomSmallMid':'no',
+		'diagonalForwardBottomSmallBottom':'no',
+
+		'diagonalForwardBottomSmallerTop':'no',
+		'diagonalForwardBottomSmallerBottom':'no',
+
+		'diagonalForwardBottomSmallest':'no',
+	} 
+
+	let xScores = {
+		'diagonalForwardMatch':[],
+		'diagonalBackwardMatch':[],
+		'diagonalBackGold':'no',
+		'diagonalFrontGold':'no',
+		'score': 0,
+		'horizontalTopLeft': 'no',
+		'horizontalTopLeftHalf': 'no',
+		'horizontalTopRightHalf': 'no',
+		'horizontalTopRight': 'no',
+
+		'verticalRightTop': 'no',
+		'verticalRightTopHalf': 'no',
+		'verticalRightBottomHalf': 'no',
+		'verticalRightBottom': 'no',
+
+		'horizontalBottomRight': 'no',
+		'horizontalBottomRightHalf': 'no',
+		'horizontalBottomLeftHalf': 'no',
+		'horizontalBottomLeft': 'no',
+
+		'verticalLeftTop': 'no',
+		'verticalLeftTopHalf': 'no',
+		'verticalLeftBottomHalf': 'no',
+		'verticalLeftBottom': 'no',
+
+		'horizontalTopMidLeft':'no',
+		'horizontalTopMidLeftHalf':'no',
+		'horizontalTopMidRightHalf':'no',
+		'horizontalTopMidRight':'no',
+
+		'horizontalTopBottomLeft':'no',
+		'horizontalTopBottomLeftHalf':'no',
+		'horizontalTopBottomRightHalf':'no',
+		'horizontalTopBottomRight':'no',
+
+		'horizontalBottomTopLeft':'no',
+		'horizontalBottomTopLeftHalf':'no',
+		'horizontalBottomTopRightHalf':'no',
+		'horizontalBottomTopRight':'no',
+
+		'horizontalBottomMidLeft':'no',
+		'horizontalBottomMidLeftHalf':'no',
+		'horizontalBottomMidRightHalf':'no',
+		'horizontalBottomMidRight':'no',
+
+		'verticalLeftMidTop':'no',
+		'verticalLeftMidTopHalf':'no',
+		'verticalLeftMidBottomHalf':'no',
+		'verticalLeftMidBottom':'no',
+
+		'verticalLeftRightTop':'no',
+		'verticalLeftRightTopHalf':'no',
+		'verticalLeftRightBottomHalf':'no',
+		'verticalLeftRightBottom':'no',
+
+		'verticalRightLeftTop':'no',
+		'verticalRightLeftTopHalf':'no',
+		'verticalRightLeftBottomHalf':'no',
+		'verticalRightLeftBottom':'no',
+
+		'verticalRightMidTop':'no',
+		'verticalRightMidTopHalf':'no',
+		'verticalRightMidBottomHalf':'no',
+		'verticalRightMidBottom':'no',
+
+		
+		//The diagonal back
+		'diagonalBackLargestTop':'no',
+		'diagonalBackLargestTopHalf':'no',
+		'diagonalBackLargestBottomHalf':'no',
+		'diagonalBackLargestBottom':'no',
+
+		//Above the diagonal back
+		'diagonalBackTopSmallTop':'no',
+		'diagonalBackTopSmallMid':'no',
+		'diagonalBackTopSmallBottom':'no',
+
+		'diagonalBackTopSmallerTop':'no',
+		'diagonalBackTopSmallerBottom':'no',
+
+		'diagonalBackTopSmallest':'no',
+
+		
+		//below the diagonal back
+		'diagonalBackBottomSmallTop':'no',
+		'diagonalBackBottomSmallMid':'no',
+		'diagonalBackBottomSmallBottom':'no',
+
+		'diagonalBackBottomSmallerTop':'no',
+		'diagonalBackBottomSmallerBottom':'no',
+
+		'diagonalBackBottomSmallest':'no',
+
+
+		//The diagonal forward
+		'diagonalForwardLargestTop':'no',
+		'diagonalForwardLargestTopHalf':'no',
+		'diagonalForwardLargestBottomHalf':'no',
+		'diagonalForwardLargestBottom':'no',
+
+		//above the diagonal forward
+		'diagonalForwardTopSmallTop':'no',
+		'diagonalForwardTopSmallMid':'no',
+		'diagonalForwardTopSmallBottom':'no',
+
+		'diagonalForwardTopSmallerTop':'no',
+		'diagonalForwardTopSmallerBottom':'no',
+
+		'diagonalForwardTopSmallest':'no',
+
+		//below the diagonal forward
+		'diagonalForwardBottomSmallTop':'no',
+		'diagonalForwardBottomSmallMid':'no',
+		'diagonalForwardBottomSmallBottom':'no',
+
+		'diagonalForwardBottomSmallerTop':'no',
+		'diagonalForwardBottomSmallerBottom':'no',
+
+		'diagonalForwardBottomSmallest':'no',
+	}
+
+	let Game = 
+	{
+		"letters":[],
+		"squares":36,
+		'endGame': function()
+						{
+							let winner = "";
+							if(xScores['score'] > oScores['score']){
+									winner = "X";
+							}
+							else if (oScores['score'] > xScores['score'])
+							{
+									winner = "O";
+							}
+							else
+							{
+									winner = "Draw";
+							}
+
+							pauseAudio();
+
+							alert("The winner is "  + winner);
+
+							//display btn for user to refresh game
+							let replayBtn = document.getElementById('replayBtn');
+
+							replayBtn.style.display = 'block';
+							
+						}
+	}
+
+	let turnFlag = null;
+
+	let gameStarted = "no";
+
+	function flashGold(match)
+	{
+
+		let goldAudio = document.getElementById("myGoldAudio");
+		//audio.currentTime = 32;//start playing from 32 secs
+		goldAudio.play(); 
+
+		switch (match)
+		{
+			case 'diagonalBackGoldBlue':
+				let box1 = document.getElementById('a').style.backgroundColor = "#DAA520";
+				let box2 = document.getElementById('h').style.backgroundColor = "#DAA520";
+				let box3 = document.getElementById('o').style.backgroundColor = "#DAA520";
+				let box4 = document.getElementById('v').style.backgroundColor = "#DAA520";
+				let box5 = document.getElementById('cc').style.backgroundColor = "#DAA520";
+				let box6 = document.getElementById('jj').style.backgroundColor = "#DAA520";
+				oScores['score'] += 8;
+				scoreO.innerHTML = oScores['score'];
+				oScores['diagonalBackGold'] = 'yes';
+				break;
+			case 'diagonalBackGoldRed':
+				let a = document.getElementById('a').style.backgroundColor = "#DAA520";
+				let h = document.getElementById('h').style.backgroundColor = "#DAA520";
+				let o = document.getElementById('o').style.backgroundColor = "#DAA520";
+				let v= document.getElementById('v').style.backgroundColor = "#DAA520";
+				let cc = document.getElementById('cc').style.backgroundColor = "#DAA520";
+				let jj = document.getElementById('jj').style.backgroundColor = "#DAA520";
+				xScores['score'] += 8;
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackGold'] = 'yes';
+				break;
+			case 'diagonalForwardGoldBlue':
+				let f = document.getElementById('f').style.backgroundColor = "#DAA520";
+				let k = document.getElementById('k').style.backgroundColor = "#DAA520";
+				let p = document.getElementById('p').style.backgroundColor = "#DAA520";
+				let u = document.getElementById('u').style.backgroundColor = "#DAA520";
+				let z = document.getElementById('z').style.backgroundColor = "#DAA520";
+				let ee = document.getElementById('ee').style.backgroundColor = "#DAA520";
+				oScores['score'] += 8;
+				scoreO.innerHTML = oScores['score'];
+				oScores['diagonalFrontGold'] = 'yes';
+				break;
+			case 'diagonalForwardGoldRed':
+				let ef = document.getElementById('f').style.backgroundColor = "#DAA520";
+				let kay = document.getElementById('k').style.backgroundColor = "#DAA520";
+				let pee = document.getElementById('p').style.backgroundColor = "#DAA520";
+				let uu = document.getElementById('u').style.backgroundColor = "#DAA520";
+				let zet = document.getElementById('z').style.backgroundColor = "#DAA520";
+				let eeyeey = document.getElementById('ee').style.backgroundColor = "#DAA520";
+				xScores['score'] += 8;
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalFrontGold'] = 'yes';	
+		}
+	}
+
+
+	/*
+	*Func to check if an element is in an array
+	*@param needle item to look for
+	*param haystack array to search in
+	*return boolean
+	*/
+	function inArray(needle, haystack)
+	{
+		if((haystack.indexOf(needle)) > -1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+
+	/*
+	* When a match is made of three squares, flash the squares that have been
+		won.
+	*/
+	function flash(one, two, three, color2, color1)
+	{
+		let flashAudio = document.getElementById("myFlashAudio");
+		//audio.currentTime = 32;//start playing from 32 secs
+		flashAudio.play(); 
+
+		
+		/////let bug = 1;
+
+		
+		let interval = setInterval(flashAndStop,10);
+		function flashAndStop()
+		{
+			//Is the player o (blue)?
+			if (color1 == 'blue')
+			{
+				one.style.backgroundColor = color2;
+				two.style.backgroundColor = color2;
+				three.style.backgroundColor = color2;
+				setTimeout(function(){
+					clearInterval(interval);
+
+						//Handle the case of flashing squares that overlap with diagonal backward gold
+						if ((oScores['diagonalBackGold'] == 'yes') && (inArray(one.getAttribute('id'),oScores['diagonalBackwardMatch']))) {one.style.backgroundColor = '#DAA520';} else {one.style.backgroundColor = color1;}
+
+						if ((oScores['diagonalBackGold'] == 'yes') && (inArray(two.getAttribute('id'),oScores['diagonalBackwardMatch']))) {two.style.backgroundColor = '#DAA520';} else {two.style.backgroundColor = color1;}
+
+						if ((oScores['diagonalBackGold'] == 'yes') && (inArray(three.getAttribute('id'),oScores['diagonalBackwardMatch']))) {three.style.backgroundColor = '#DAA520';} else {three.style.backgroundColor = color1;}
+
+						//Handle the case of flashing squares that overlap with diagonal forward gold
+						if ((oScores['diagonalFrontGold'] == 'yes') && (inArray(one.getAttribute('id'),oScores['diagonalForwardMatch']))) {one.style.backgroundColor = '#DAA520';} else {one.style.backgroundColor = color1;}
+
+						if ((oScores['diagonalFrontGold'] == 'yes') && (inArray(two.getAttribute('id'),oScores['diagonalForwardMatch']))) {two.style.backgroundColor = '#DAA520';} else {two.style.backgroundColor = color1;}
+
+						if ((oScores['diagonalFrontGold'] == 'yes') && (inArray(three.getAttribute('id'),oScores['diagonaForwardMatch']))) {three.style.backgroundColor = '#DAA520';} else {three.style.backgroundColor = color1;}
+					},300);
+
+
+			}//END OF CHECK FOR BLUE
+
+			if (color1 == 'red')
+			{
+				one.style.backgroundColor = color2;
+				two.style.backgroundColor = color2;
+				three.style.backgroundColor = color2;
+				setTimeout(function(){
+					clearInterval(interval);
+
+						//Handle the case of flashing squares that overlap with diagonal bckward gold
+						if ((xScores['diagonalBackGold'] == 'yes') && (inArray(one.getAttribute('id'),xScores['diagonalBackwardMatch']))) {one.style.backgroundColor = '#DAA520';} else {one.style.backgroundColor = color1;}
+
+						if ((xScores['diagonalBackGold'] == 'yes') && (inArray(two.getAttribute('id'),xScores['diagonalBackwardMatch']))) {two.style.backgroundColor = '#DAA520';} else {two.style.backgroundColor = color1;}
+
+						if ((xScores['diagonalBackGold'] == 'yes') && (inArray(three.getAttribute('id'),xScores['diagonalBackwardMatch']))) {three.style.backgroundColor = '#DAA520';} else {three.style.backgroundColor = color1;}
+
+						//Handle the case of flashing squares that overlap with diagonal forward gold
+						if ((xScores['diagonalFrontGold'] == 'yes') && (inArray(one.getAttribute('id'),xScores['diagonalForwardMatch']))) {one.style.backgroundColor = '#DAA520';} else {one.style.backgroundColor = color1;}
+
+						if ((xScores['diagonalFrontGold'] == 'yes') && (inArray(two.getAttribute('id'),xScores['diagonalForwardMatch']))) {two.style.backgroundColor = '#DAA520';} else {two.style.backgroundColor = color1;}
+
+						if ((xScores['diagonalFrontGold'] == 'yes') && (inArray(three.getAttribute('id'),xScores['diagonaForwardMatch']))) {three.style.backgroundColor = '#DAA520';} else {three.style.backgroundColor = color1;}
+					},300);
+			}
+		}	
+	}
+
+	function playAudio()
+	{
+		let audio = document.getElementById("myAudio");
+	//audio.currentTime = 32;//start playing from 32 secs
+		audio.play();
+	}
+
+	function pauseAudio()
+	{
+		let audio = document.getElementById("myAudio");
+		audio.pause();
+	}
+
+	function changeRefreshBtnColor()
+	{
+		let refreshBtn = document.getElementById('replayBtn');
+		refreshBtn.style.backgroundColor = '#00FF00';
+	}
+
+	function restoreBtnColor()
+	{
+		let refreshBtn = document.getElementById('replayBtn');
+		refreshBtn.style.backgroundColor = '#303';
+	}
+
+	function refreshPage()
+	{
+		window.location.reload();
+	}
+
+	function checkScore() 
+	{
+		if (Game["squares"] != 0) 
+		{
+			Game["squares"] -= 1;
+
+			if (Game["squares"] == 0)
+			{
+				Game.endGame();
+			}
+		}
+
+		if (gameStarted == "no") 
+		{
+			playAudio();
+			gameStarted = 'yes';
+		}
+
+
+		if ((oScores['diagonalBackGold'] == 'yes') || (xScores['diagonalBackGold'] == 'yes')) 
+		{
+			let box1 = document.getElementById('a').style.backgroundColor = "#DAA520";
+			let box2 = document.getElementById('h').style.backgroundColor = "#DAA520";
+			let box3 = document.getElementById('o').style.backgroundColor = "#DAA520";
+			let box4 = document.getElementById('v').style.backgroundColor = "#DAA520";
+			let box5 = document.getElementById('cc').style.backgroundColor = "#DAA520";
+			let box6 = document.getElementById('jj').style.backgroundColor = "#DAA520";
+		}
+
+		if ((oScores['diagonalFrontGold'] == 'yes') || (xScores['diagonalFrontGold'] == 'yes')) 
+		{
+			let f = document.getElementById('f').style.backgroundColor = "#DAA520";
+			let k = document.getElementById('k').style.backgroundColor = "#DAA520";
+			let p = document.getElementById('p').style.backgroundColor = "#DAA520";
+			let u = document.getElementById('u').style.backgroundColor = "#DAA520";
+			let z = document.getElementById('z').style.backgroundColor = "#DAA520";
+			let ee = document.getElementById('ee').style.backgroundColor = "#DAA520";
+		}
+	}
+
+
+	function callAClick(e)
+	{
+		let a = document.getElementById('a');
+		//check the flag
+		if ((a.innerHTML == 'O') || (a.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			a.innerHTML = 'O';
+			a.style.backgroundColor = 'blue';
+			
+			a.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('a');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			a.innerHTML = 'X';
+			a.style.backgroundColor = 'red';
+			a.style.color = 'white';
+			turnFlag = 'X'
+			xScores['diagonalBackwardMatch'].push('a');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			a.innerHTML = 'O';
+			a.style.backgroundColor = 'blue';
+			a.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('a');
+
+			//update O scores
+			updateOScore();
+		} 
+	}
+
+	function callBClick(e)
+	{
+		let b = document.getElementById('b');
+		//check the flag
+		if ((b.innerHTML == 'O') || (b.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			b.innerHTML = 'O';
+			b.style.backgroundColor = 'blue';
+			b.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			b.innerHTML = 'X';
+			b.style.backgroundColor = 'red';
+			b.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			b.innerHTML = 'O';
+			b.style.backgroundColor = 'blue';
+			b.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	function callCClick(e)
+	{
+		let c = document.getElementById('c');
+		//check the flag
+		if ((c.innerHTML == 'O') || (c.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			c.innerHTML = 'O';
+			c.style.backgroundColor = 'blue';
+			c.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			c.innerHTML = 'X';
+			c.style.backgroundColor = 'red';
+			c.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			c.innerHTML = 'O';
+			c.style.backgroundColor = 'blue';
+			c.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	function callDClick(e)
+	{
+		let d = document.getElementById('d');
+		//check the flag
+		if ((d.innerHTML == 'O') || (d.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			d.innerHTML = 'O';
+			d.style.backgroundColor = 'blue';
+			d.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			d.innerHTML = 'X';
+			d.style.backgroundColor = 'red';
+			d.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			d.innerHTML = 'O';
+			d.style.backgroundColor = 'blue';
+			d.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	function callEClick(ev)
+	{
+		let e = document.getElementById('e');
+		//check the flag
+		if ((e.innerHTML == 'O') || (e.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			e.innerHTML = 'O';
+			e.style.backgroundColor = 'blue';
+			e.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			e.innerHTML = 'X';
+			e.style.backgroundColor = 'red';
+			e.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			e.innerHTML = 'O';
+			e.style.backgroundColor = 'blue';
+			e.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	function callFClick(e)
+	{
+		let f = document.getElementById('f');
+		//check the flag
+		if ((f.innerHTML == 'O') || (f.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			f.innerHTML = 'O';
+			f.style.backgroundColor = 'blue';
+			f.style.color = 'white';
+			turnFlag = 'O'
+			//f exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('f');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			f.innerHTML = 'X';
+			f.style.backgroundColor = 'red';
+			f.style.color = 'white';
+			turnFlag = 'X'
+			//f exists in the diagonalForwardMatch
+			xScores['diagonalForwardMatch'].push('f');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			f.innerHTML = 'O';
+			f.style.backgroundColor = 'blue';
+			f.style.color = 'white';
+			turnFlag = 'O'
+			//f exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('f');
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	function callGClick(e)
+	{
+		let g = document.getElementById('g');
+		//check the flag
+		if ((g.innerHTML == 'O') || (g.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			g.innerHTML = 'O';
+			g.style.backgroundColor = 'blue';
+			g.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			g.innerHTML = 'X';
+			g.style.backgroundColor = 'red';
+			g.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			g.innerHTML = 'O';
+			g.style.backgroundColor = 'blue';
+			g.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	function callHClick(e)
+	{
+		let h = document.getElementById('h');
+		//check the flag
+		if ((h.innerHTML == 'O') || (h.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			h.innerHTML = 'O';
+			h.style.backgroundColor = 'blue';
+			h.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('h');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			h.innerHTML = 'X';
+			h.style.backgroundColor = 'red';
+			h.style.color = 'white';
+			turnFlag = 'X'
+			xScores['diagonalBackwardMatch'].push('h');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			h.innerHTML = 'O';
+			h.style.backgroundColor = 'blue';
+			h.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('h');
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	function callIClick(e)
+	{
+		let i = document.getElementById('i');
+		//check the flag
+		if ((i.innerHTML == 'O') || (i.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			i.innerHTML = 'O';
+			i.style.backgroundColor = 'blue';
+			i.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			i.innerHTML = 'X';
+			i.style.backgroundColor = 'red';
+			i.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			i.innerHTML = 'O';
+			i.style.backgroundColor = 'blue';
+			i.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	
+	//---J
+	function callJClick(e)
+	{
+		let j = document.getElementById('j');
+		//check the flag
+		if ((j.innerHTML == 'O') || (j.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			j.innerHTML = 'O';
+			j.style.backgroundColor = 'blue';
+			j.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			j.innerHTML = 'X';
+			j.style.backgroundColor = 'red';
+			j.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			j.innerHTML = 'O';
+			j.style.backgroundColor = 'blue';
+			j.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+
+	//----K
+	function callKClick(e)
+	{
+		let k = document.getElementById('k');
+		//check the flag
+		if ((k.innerHTML == 'O') || (k.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			k.innerHTML = 'O';
+			k.style.backgroundColor = 'blue';
+			k.style.color = 'white';
+			turnFlag = 'O'
+			//k exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('k');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			k.innerHTML = 'X';
+			k.style.backgroundColor = 'red';
+			k.style.color = 'white';
+			turnFlag = 'X'
+			//k exists in the diagonalForwardMatch
+			xScores['diagonalForwardMatch'].push('k');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			k.innerHTML = 'O';
+			k.style.backgroundColor = 'blue';
+			k.style.color = 'white';
+			turnFlag = 'O'
+			//k exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('k');
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---L
+	function callLClick(e)
+	{
+		let l = document.getElementById('l');
+		//check the flag
+		if ((l.innerHTML == 'O') || (l.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			l.innerHTML = 'O';
+			l.style.backgroundColor = 'blue';
+			l.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			l.innerHTML = 'X';
+			l.style.backgroundColor = 'red';
+			l.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			l.innerHTML = 'O';
+			l.style.backgroundColor = 'blue';
+			l.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---M
+	function callMClick(e)
+	{
+		let m = document.getElementById('m');
+		//check the flag
+		if ((m.innerHTML == 'O') || (m.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			m.innerHTML = 'O';
+			m.style.backgroundColor = 'blue';
+			m.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			m.innerHTML = 'X';
+			m.style.backgroundColor = 'red';
+			m.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			m.innerHTML = 'O';
+			m.style.backgroundColor = 'blue';
+			m.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---N
+	function callNClick(e)
+	{
+		let n = document.getElementById('n');
+		//check the flag
+		if ((n.innerHTML == 'O') || (n.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			n.innerHTML = 'O';
+			n.style.backgroundColor = 'blue';
+			n.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			n.innerHTML = 'X';
+			n.style.backgroundColor = 'red';
+			n.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			n.innerHTML = 'O';
+			n.style.backgroundColor = 'blue';
+			n.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---O
+	function callOClick(e)
+	{ 
+		let o = document.getElementById('o');
+		//check the flag
+		if ((o.innerHTML == 'O') || (o.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			o.innerHTML = 'O';
+			o.style.backgroundColor = 'blue';
+			o.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('o');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			o.innerHTML = 'X';
+			o.style.backgroundColor = 'red';
+			o.style.color = 'white';
+			turnFlag = 'X'
+			xScores['diagonalBackwardMatch'].push('o');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			o.innerHTML = 'O';
+			o.style.backgroundColor = 'blue';
+			o.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('o');
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---P
+	function callPClick(e)
+	{
+		let p = document.getElementById('p');
+		//check the flag
+		if ((p.innerHTML == 'O') || (p.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			p.innerHTML = 'O';
+			p.style.backgroundColor = 'blue';
+			p.style.color = 'white';
+			turnFlag = 'O'
+			//p exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('p');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			p.innerHTML = 'X';
+			p.style.backgroundColor = 'red';
+			p.style.color = 'white';
+			turnFlag = 'X'
+			//p exists in the diagonalForwardMatch
+			xScores['diagonalForwardMatch'].push('p');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			p.innerHTML = 'O';
+			p.style.backgroundColor = 'blue';
+			p.style.color = 'white';
+			turnFlag = 'O'
+			//p exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('p');
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---Q
+	function callQClick(e)
+	{
+		let q = document.getElementById('q');
+		//check the flag
+		if ((q.innerHTML == 'O') || (q.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			q.innerHTML = 'O';
+			q.style.backgroundColor = 'blue';
+			q.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			q.innerHTML = 'X';
+			q.style.backgroundColor = 'red';
+			q.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			q.innerHTML = 'O';
+			q.style.backgroundColor = 'blue';
+			q.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---R
+	function callRClick(e)
+	{
+		let r = document.getElementById('r');
+		//check the flag
+		if ((r.innerHTML == 'O') || (r.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			r.innerHTML = 'O';
+			r.style.backgroundColor = 'blue';
+			r.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			r.innerHTML = 'X';
+			r.style.backgroundColor = 'red';
+			r.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			r.innerHTML = 'O';
+			r.style.backgroundColor = 'blue';
+			r.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---S
+	function callSClick(e)
+	{
+		let s = document.getElementById('s');
+		//check the flag
+		if ((s.innerHTML == 'O') || (s.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			s.innerHTML = 'O';
+			s.style.backgroundColor = 'blue';
+			s.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			s.innerHTML = 'X';
+			s.style.backgroundColor = 'red';
+			s.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			s.innerHTML = 'O';
+			s.style.backgroundColor = 'blue';
+			s.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---T
+	function callTClick(e)
+	{
+		let t = document.getElementById('t');
+		//check the flag
+		if ((t.innerHTML == 'O') || (t.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			t.innerHTML = 'O';
+			t.style.backgroundColor = 'blue';
+			t.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			t.innerHTML = 'X';
+			t.style.backgroundColor = 'red';
+			t.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			t.innerHTML = 'O';
+			t.style.backgroundColor = 'blue';
+			t.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---U
+	function callUClick(e)
+	{
+		let u = document.getElementById('u');
+		//check the flag
+		if ((u.innerHTML == 'O') || (u.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			u.innerHTML = 'O';
+			u.style.backgroundColor = 'blue';
+			u.style.color = 'white';
+			turnFlag = 'O'
+			//u exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('u');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			u.innerHTML = 'X';
+			u.style.backgroundColor = 'red';
+			u.style.color = 'white';
+			turnFlag = 'X'
+			//u exists in the diagonalForwardMatch
+			xScores['diagonalForwardMatch'].push('u');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			u.innerHTML = 'O';
+			u.style.backgroundColor = 'blue';
+			u.style.color = 'white';
+			turnFlag = 'O'
+			//u exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('u');
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---V
+	function callVClick(e)
+	{
+		let v = document.getElementById('v');
+		//check the flag
+		if ((v.innerHTML == 'O') || (v.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			v.innerHTML = 'O';
+			v.style.backgroundColor = 'blue';
+			v.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('v');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			v.innerHTML = 'X';
+			v.style.backgroundColor = 'red';
+			v.style.color = 'white';
+			turnFlag = 'X'
+			xScores['diagonalBackwardMatch'].push('v');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			v.innerHTML = 'O';
+			v.style.backgroundColor = 'blue';
+			v.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('v');
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---W
+	function callWClick(e)
+	{
+		let w = document.getElementById('w');
+		//check the flag
+		if ((w.innerHTML == 'O') || (w.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			w.innerHTML = 'O';
+			w.style.backgroundColor = 'blue';
+			w.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			w.innerHTML = 'X';
+			w.style.backgroundColor = 'red';
+			w.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			w.innerHTML = 'O';
+			w.style.backgroundColor = 'blue';
+			w.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---X
+	function callXClick(e)
+	{
+		let x = document.getElementById('x');
+		//check the flag
+		if ((x.innerHTML == 'O') || (x.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			x.innerHTML = 'O';
+			x.style.backgroundColor = 'blue';
+			x.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			x.innerHTML = 'X';
+			x.style.backgroundColor = 'red';
+			x.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			x.innerHTML = 'O';
+			x.style.backgroundColor = 'blue';
+			x.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---Y
+	function callYClick(e)
+	{
+		let y = document.getElementById('y');
+		//check the flag
+		if ((y.innerHTML == 'O') || (y.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			y.innerHTML = 'O';
+			y.style.backgroundColor = 'blue';
+			y.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			y.innerHTML = 'X';
+			y.style.backgroundColor = 'red';
+			y.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			y.innerHTML = 'O';
+			y.style.backgroundColor = 'blue';
+			y.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---Z
+	function callZClick(e)
+	{
+		let z = document.getElementById('z');
+		//check the flag
+		if ((z.innerHTML == 'O') || (z.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			z.innerHTML = 'O';
+			z.style.backgroundColor = 'blue';
+			z.style.color = 'white';
+			turnFlag = 'O'
+			//z exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('z');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			z.innerHTML = 'X';
+			z.style.backgroundColor = 'red';
+			z.style.color = 'white';
+			turnFlag = 'X'
+			//z exists in the diagonalForwardMatch
+			xScores['diagonalForwardMatch'].push('z');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			z.innerHTML = 'O';
+			z.style.backgroundColor = 'blue';
+			z.style.color = 'white';
+			turnFlag = 'O'
+			//z exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('z');
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---AA
+	function callAAClick(e)
+	{
+		let aa = document.getElementById('aa');
+		//check the flag
+		if ((aa.innerHTML == 'O') || (aa.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			aa.innerHTML = 'O';
+			aa.style.backgroundColor = 'blue';
+			aa.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			aa.innerHTML = 'X';
+			aa.style.backgroundColor = 'red';
+			aa.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			aa.innerHTML = 'O';
+			aa.style.backgroundColor = 'blue';
+			aa.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---BB
+	function callBBClick(e)
+	{
+		let bb = document.getElementById('bb');
+		//check the flag
+		if ((bb.innerHTML == 'O') || (bb.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			bb.innerHTML = 'O';
+			bb.style.backgroundColor = 'blue';
+			bb.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			bb.innerHTML = 'X';
+			bb.style.backgroundColor = 'red';
+			bb.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			bb.innerHTML = 'O';
+			bb.style.backgroundColor = 'blue';
+			bb.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---CC
+	function callCCClick(e)
+	{
+		let cc = document.getElementById('cc');
+		//check the flag
+		if ((cc.innerHTML == 'O') || (cc.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			cc.innerHTML = 'O';
+			cc.style.backgroundColor = 'blue';
+			cc.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('cc');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			cc.innerHTML = 'X';
+			cc.style.backgroundColor = 'red';
+			cc.style.color = 'white';
+			turnFlag = 'X'
+			xScores['diagonalBackwardMatch'].push('cc');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			cc.innerHTML = 'O';
+			cc.style.backgroundColor = 'blue';
+			cc.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('cc');
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---DD
+	function callDDClick(e)
+	{
+		let dd = document.getElementById('dd');
+		//check the flag
+		if ((dd.innerHTML == 'O') || (dd.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			dd.innerHTML = 'O';
+			dd.style.backgroundColor = 'blue';
+			dd.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			dd.innerHTML = 'X';
+			dd.style.backgroundColor = 'red';
+			dd.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			dd.innerHTML = 'O';
+			dd.style.backgroundColor = 'blue';
+			dd.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---EE
+	function callEEClick(e)
+	{
+		let ee = document.getElementById('ee');
+		//check the flag
+		if ((ee.innerHTML == 'O') || (ee.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			ee.innerHTML = 'O';
+			ee.style.backgroundColor = 'blue';
+			ee.style.color = 'white';
+			turnFlag = 'O'
+			//ee exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('ee');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			ee.innerHTML = 'X';
+			ee.style.backgroundColor = 'red';
+			ee.style.color = 'white';
+			turnFlag = 'X'
+			//ee exists in the diagonalForwardMatch
+			xScores['diagonalForwardMatch'].push('ee');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			ee.innerHTML = 'O';
+			ee.style.backgroundColor = 'blue';
+			ee.style.color = 'white';
+			turnFlag = 'O'
+			//ee exists in the diagonalForwardMatch
+			oScores['diagonalForwardMatch'].push('ee');
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---FF
+	function callFFClick(e)
+	{
+		let ff = document.getElementById('ff');
+		//check the flag
+		if ((ff.innerHTML == 'O') || (ff.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			ff.innerHTML = 'O';
+			ff.style.backgroundColor = 'blue';
+			ff.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			ff.innerHTML = 'X';
+			ff.style.backgroundColor = 'red';
+			ff.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			ff.innerHTML = 'O';
+			ff.style.backgroundColor = 'blue';
+			ff.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---GG
+	function callGGClick(e)
+	{
+		let gg = document.getElementById('gg');
+		//check the flag
+		if ((gg.innerHTML == 'O') || (gg.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			gg.innerHTML = 'O';
+			gg.style.backgroundColor = 'blue';
+			gg.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			gg.innerHTML = 'X';
+			gg.style.backgroundColor = 'red';
+			gg.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			gg.innerHTML = 'O';
+			gg.style.backgroundColor = 'blue';
+			gg.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---HH
+	function callHHClick(e)
+	{
+		let hh = document.getElementById('hh');
+		//check the flag
+		if ((hh.innerHTML == 'O') || (hh.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			hh.innerHTML = 'O';
+			hh.style.backgroundColor = 'blue';
+			hh.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			hh.innerHTML = 'X';
+			hh.style.backgroundColor = 'red';
+			hh.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			hh.innerHTML = 'O';
+			hh.style.backgroundColor = 'blue';
+			hh.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---II
+	function callIIClick(e)
+	{
+		let ii = document.getElementById('ii');
+		//check the flag
+		if ((ii.innerHTML == 'O') || (ii.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			ii.innerHTML = 'O';
+			ii.style.backgroundColor = 'blue';
+			ii.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			ii.innerHTML = 'X';
+			ii.style.backgroundColor = 'red';
+			ii.style.color = 'white';
+			turnFlag = 'X'
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			ii.innerHTML = 'O';
+			ii.style.backgroundColor = 'blue';
+			ii.style.color = 'white';
+			turnFlag = 'O'
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	//---JJ
+	function callJJClick(e)
+	{
+		let jj = document.getElementById('jj');
+		//check the flag
+		if ((jj.innerHTML == 'O') || (jj.innerHTML == 'X'))
+		{
+			return;
+		}
+		else if (turnFlag == null) { 
+			jj.innerHTML = 'O';
+			jj.style.backgroundColor = 'blue';
+			jj.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('jj');
+
+			//update O scores
+			updateOScore();
+		}
+		else if (turnFlag == 'O')
+		{
+			jj.innerHTML = 'X';
+			jj.style.backgroundColor = 'red';
+			jj.style.color = 'white';
+			turnFlag = 'X'
+			xScores['diagonalBackwardMatch'].push('jj');
+
+			//update X scores
+			updateXScore();
+		}
+		else
+		{
+			jj.innerHTML = 'O';
+			jj.style.backgroundColor = 'blue';
+			jj.style.color = 'white';
+			turnFlag = 'O'
+			oScores['diagonalBackwardMatch'].push('jj');
+
+			//update O scores
+			updateOScore();
+		}
+	}
+
+	
+1
+
+	function updateOScore()
+	{
+		//'horizontalTopLeft': 'no',
+		let a = document.getElementById('a');
+		let b = document.getElementById('b');
+		let c = document.getElementById('c');
+
+
+		if (oScores['horizontalTopLeft'] != 'yes')
+		{
+			if ((Game.letters.indexOf('a') <0) && (Game.letters.indexOf('b') <0) && (Game.letters.indexOf('c')) < 0) 
+			{
+				if ((a.innerHTML == 'O') && (b.innerHTML == 'O') && (c.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//a exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('a');
+					scoreO.innerHTML = oScores['score'];
+					oScores['horizontalTopLeft'] = 'yes'; 
+					Game.letters.push('a','b','c');
+					flash(a, b, c,'green', 'blue');		
+				}
+			}
+
+			
+		}
+
+		//'horizontalTopLeftHalf': 'no',
+		//let b = document.getElementById('b');
+		//let c = document.getElementById('c');
+		let d = document.getElementById('d');
+
+		if (oScores['horizontalTopLeftHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('b') <0) && (Game.letters.indexOf('c') <0) && (Game.letters.indexOf('d')) < 0)
+			{
+				if ((b.innerHTML == 'O') && (c.innerHTML == 'O') && (d.innerHTML == 'O'))
+				{
+
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalTopLeftHalf'] = 'yes';
+					Game.letters.push('b','c','d');
+					flash(d, b, c,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalTopRightHalf': 'no',
+		//let c = document.getElementById('c');
+		//let d = document.getElementById('d');
+		let e = document.getElementById('e');
+
+		if (oScores['horizontalTopRightHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('c') < 0) && (Game.letters.indexOf('d') <0) && (Game.letters.indexOf('e') < 0)) 
+			{
+				if ((c.innerHTML == 'O') && (d.innerHTML == 'O') && (e.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalTopRightHalf'] = 'yes';
+					Game.letters.push('c','d','e');
+					flash(c, d, e,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalTopRight': 'no',
+		//let d = document.getElementById('d');
+		//let e = document.getElementById('e');
+		let f = document.getElementById('f');
+
+		if (oScores['horizontalTopRight'] != 'yes')
+		{
+			if ((Game.letters.indexOf('d') < 0) && (Game.letters.indexOf('e') < 0) && (Game.letters.indexOf('f') < 0)) 
+			{
+				if ((d.innerHTML == 'O') && (e.innerHTML == 'O') && (f.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//f exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('f');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalTopRight'] = 'yes';
+					Game.letters.push('d','e','f');
+					flash(d, e, f,'green', 'blue');
+				}
+			}
+		}
+
+		//verticalRightTop-flr (and f already selected)
+		let l = document.getElementById('l');
+		let r = document.getElementById('r');
+
+		if (oScores['verticalRightTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('f') <0) && (Game.letters.indexOf('l') <0) && (Game.letters.indexOf('r')) < 0) 
+			{
+				if ((f.innerHTML == 'O') && (l.innerHTML == 'O') && (r.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//f exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('f');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightTop'] = 'yes'; 
+					Game.letters.push('f','l','r');
+					flash(r, l, f,'green', 'blue');
+				}
+			}
+		}
+
+		//verticalRightTopHalf-lrx (and lr already selected)
+		let x = document.getElementById('x');
+
+		if (oScores['verticalRightTopHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('l') <0) && (Game.letters.indexOf('r') <0) && (Game.letters.indexOf('x')) < 0) 
+			{
+				if ((l.innerHTML == 'O') && (r.innerHTML == 'O') && (x.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightTopHalf'] = 'yes'; 
+					Game.letters.push('l','r','x');
+					flash(r, l, x,'green', 'blue');
+				}
+			}
+		}
+
+		//verticalRightBottomHalf-dd x r (x and r already selected)
+		let dd = document.getElementById('dd');
+
+		if (oScores['verticalRightBottomHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('dd') <0) && (Game.letters.indexOf('x') <0) && (Game.letters.indexOf('r')) < 0) 
+			{
+				if ((dd.innerHTML == 'O') && (x.innerHTML == 'O') && (r.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightBottomHalf'] = 'yes';
+					Game.letters.push('dd','x','r');
+					flash(r, dd, x,'green', 'blue'); 
+				}
+			}
+		}
+
+		//verticalRightBottom-x dd jj (x and dd already selected)
+		let jj = document.getElementById('jj');
+
+		if (oScores['verticalRightBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('x') <0) && (Game.letters.indexOf('dd') <0) && (Game.letters.indexOf('jj')) < 0) 
+			{
+				if ((x.innerHTML == 'O') && (dd.innerHTML == 'O') && (jj.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//a exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('jj');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightBottom'] = 'yes'; 
+					Game.letters.push('x','dd','jj');
+					flash(x, dd, jj,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalBottomRight'-hh ii jj (jj already selected)
+		let hh = document.getElementById('hh');
+		let ii = document.getElementById('ii');
+
+		if (oScores['horizontalBottomRight'] != 'yes')
+		{
+			if ((Game.letters.indexOf('hh') <0) && (Game.letters.indexOf('ii') <0) && (Game.letters.indexOf('jj')) < 0) 
+			{
+				if ((hh.innerHTML == 'O') && (ii.innerHTML == 'O') && (jj.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//jj exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('jj');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomRight'] = 'yes';
+					Game.letters.push('hh','ii','jj');
+					flash(hh, ii, jj,'green', 'blue');
+				}
+			}
+		}
+
+
+		//'horizontalBottomRightHalf'-gg hh ii (hh and ii already selected)
+		if (oScores['horizontalBottomRightHalf'] != 'yes')
+		{
+			let gg = document.getElementById('gg');
+
+			if ((Game.letters.indexOf('gg') <0) && (Game.letters.indexOf('hh') <0) && (Game.letters.indexOf('ii')) < 0) 
+			{
+				if ((gg.innerHTML == 'O') && (hh.innerHTML == 'O') && (ii.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomRightHalf'] = 'yes';
+					Game.letters.push('gg','hh','ii');
+					flash(hh, ii, gg,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalBottomLeftHalf'-ff gg hh (gg and hh already selected)
+		if (oScores['horizontalBottomLeftHalf'] != 'yes')
+		{
+			let ff = document.getElementById('ff');
+
+			if ((Game.letters.indexOf('ff') <0) && (Game.letters.indexOf('gg') <0) && (Game.letters.indexOf('hh')) < 0) 
+			{
+				if ((ff.innerHTML == 'O') && (gg.innerHTML == 'O') && (hh.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomLeftHalf'] = 'yes';
+					Game.letters.push('ff','gg','hh');
+					flash(hh, gg, ff,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalBottomLeft'-ee ff gg (ff and gg already selected)
+		if (oScores['horizontalBottomLeft'] != 'yes')
+		{
+			let ee = document.getElementById('ee');
+
+			if ((Game.letters.indexOf('ee') <0) && (Game.letters.indexOf('ff') <0) && (Game.letters.indexOf('gg')) < 0) 
+			{
+				if ((ee.innerHTML == 'O') && (ff.innerHTML == 'O') && (gg.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//ee exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('ee');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomLeft'] = 'yes';
+					Game.letters.push('ee','ff','gg');
+					flash(ee, gg, ff,'green', 'blue');
+				}
+			}
+		}
+
+		//verticalLeftTop-a g m (a and g already selected)
+		let m = document.getElementById('m');
+
+		if (oScores['verticalLeftTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('a') <0) && (Game.letters.indexOf('g') <0) && (Game.letters.indexOf('m')) < 0) 
+			{
+				if ((a.innerHTML == 'O') && (g.innerHTML == 'O') && (m.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//a exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('a');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftTop'] = 'yes';
+					Game.letters.push('a','g','m'); 
+					flash(a, g, m,'green', 'blue');
+				}
+			}
+		}
+
+		//verticalLeftTopHalf-g m s (g and m already selected)
+		let s = document.getElementById('s');
+
+		if (oScores['verticalLeftTopHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('g') <0) && (Game.letters.indexOf('m') <0) && (Game.letters.indexOf('s')) < 0) 
+			{
+				if ((g.innerHTML == 'O') && (m.innerHTML == 'O') && (s.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftTopHalf'] = 'yes';
+					Game.letters.push('g','m','s'); 
+					flash(s, g, m,'green', 'blue');
+				}
+			}
+		}
+
+
+		//verticalLeftBottomHalf-m s y (m and s already selected)
+		let y = document.getElementById('y');
+
+		if (oScores['verticalLeftBottomHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('m') <0) && (Game.letters.indexOf('s') <0) && (Game.letters.indexOf('y')) < 0) 
+			{
+				if ((m.innerHTML == 'O') && (s.innerHTML == 'O') && (y.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftBottomHalf'] = 'yes';
+					Game.letters.push('m','s', 'y'); 
+					flash(s, y, m,'green', 'blue');
+				}
+			}
+		}
+
+
+		//verticalLeftBottom-s y ee (s and y already selected)
+		let ee = document.getElementById('ee');
+
+		if (oScores['verticalLeftBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('s') <0) && (Game.letters.indexOf('y') <0) && (Game.letters.indexOf('ee')) < 0) 
+			{
+				if ((s.innerHTML == 'O') && (y.innerHTML == 'O') && (ee.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//ee exists in the diagonalBackwardMatch
+					oScores['diagonalForwardMatch'].push('ee');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftBottom'] = 'yes';
+					Game.letters.push('s', 'y', 'ee'); 
+					flash(s, y, ee,'green', 'blue');
+				}
+			}
+		}
+
+
+		//'horizontalTopMidLeft'-g h i 
+		if (oScores['horizontalTopMidLeft'] != 'yes')
+		{
+			let g = document.getElementById('g');
+			let h = document.getElementById('h');
+			let i = document.getElementById('i');
+
+			if ((Game.letters.indexOf('g') <0) && (Game.letters.indexOf('h') <0) && (Game.letters.indexOf('i')) < 0) 
+			{
+				if ((g.innerHTML == 'O') && (h.innerHTML == 'O') && (i.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//h exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('h');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalTopMidLeft'] = 'yes';
+					Game.letters.push('g', 'h', 'i');
+					flash(g, h, i,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalTopMidLeftHalf'-h i j (h and i already selected)
+		if (oScores['horizontalTopMidLeftHalf'] != 'yes')
+		{
+			let j = document.getElementById('j');
+
+			if ((Game.letters.indexOf('h') <0) && (Game.letters.indexOf('i') <0) && (Game.letters.indexOf('j')) < 0) 
+			{
+				if ((h.innerHTML == 'O') && (i.innerHTML == 'O') && (j.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//h exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('h');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalTopMidLeftHalf'] = 'yes';
+					Game.letters.push('h', 'i', 'j');
+					flash(j, h, i,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalTopMidRightHalf'-i j k (i and j already selected)
+		if (oScores['horizontalTopMidRightHalf'] != 'yes')
+		{
+			let k = document.getElementById('k');
+
+			if ((Game.letters.indexOf('i') <0) && (Game.letters.indexOf('j') <0) && (Game.letters.indexOf('k')) < 0) 
+			{
+				if ((i.innerHTML == 'O') && (j.innerHTML == 'O') && (k.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//k exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('k');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalTopMidRightHalf'] = 'yes';
+					Game.letters.push('i', 'j', 'k');
+					flash(j, k, i,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalTopMidRight'-j k l (all already selected)
+		if (oScores['horizontalTopMidRight'] != 'yes')
+		{
+			if ((Game.letters.indexOf('j') <0) && (Game.letters.indexOf('k') <0) && (Game.letters.indexOf('l')) < 0) 
+			{
+				if ((j.innerHTML == 'O') && (k.innerHTML == 'O') && (l.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//k exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('k');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalTopMidRight'] = 'yes';
+					Game.letters.push('j', 'k', 'l');
+					flash(j, k, l,'green', 'blue');
+				}
+			}
+		}
+
+
+		//'horizontalTopBottomLeft'-m n o (m already selected)
+		if (oScores['horizontalTopBottomLeft'] != 'yes')
+		{
+			let n = document.getElementById('n');
+			let o = document.getElementById('o');
+
+			if ((Game.letters.indexOf('m') <0) && (Game.letters.indexOf('m') <0) && (Game.letters.indexOf('o')) < 0) 
+			{
+				if ((m.innerHTML == 'O') && (n.innerHTML == 'O') && (o.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//o exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('o');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalTopBottomLeft'] = 'yes';
+					Game.letters.push('m', 'n', 'o');
+					flash(m, n, o,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalTopBottomLeftHalf'-n o p (n and o already selected)
+		if (oScores['horizontalTopBottomLeftHalf'] != 'yes')
+		{
+			let p = document.getElementById('p');
+
+			if ((Game.letters.indexOf('n') <0) && (Game.letters.indexOf('o') <0) && (Game.letters.indexOf('p')) < 0) 
+			{
+				if ((n.innerHTML == 'O') && (o.innerHTML == 'O') && (p.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//o exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('o');
+					//p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('p');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalTopBottomLeftHalf'] = 'yes';
+					Game.letters.push('n', 'o', 'p');
+					flash(p, n, o,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalTopBottomRightHalf'-o p q (o and p already selected)
+		if (oScores['horizontalTopBottomRightHalf'] != 'yes')
+		{
+			let q = document.getElementById('q');
+
+			if ((Game.letters.indexOf('o') <0) && (Game.letters.indexOf('p') <0) && (Game.letters.indexOf('q')) < 0) 
+			{
+				if ((o.innerHTML == 'O') && (p.innerHTML == 'O') && (q.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//o exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('o');
+					//p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('p');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalTopBottomRightHalf'] = 'yes';
+					Game.letters.push('o', 'p', 'q');
+					flash(p, q, o,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalTopBottomRight'-p q r (all already selected)
+		if (oScores['horizontalTopBottomRight'] != 'yes')
+		{
+			if ((Game.letters.indexOf('p') <0) && (Game.letters.indexOf('q') <0) && (Game.letters.indexOf('r')) < 0) 
+			{
+				if ((p.innerHTML == 'O') && (q.innerHTML == 'O') && (r.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('p');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalTopBottomRight'] = 'yes';
+					Game.letters.push('p', 'q', 'r');
+					flash(p, q, r,'green', 'blue');
+				}
+			}
+		}
+
+
+		//'horizontalBottomTopLeft'-s t u (s already selected)
+		if (oScores['horizontalBottomTopLeft'] != 'yes')
+		{
+			let t = document.getElementById('t');
+			let u = document.getElementById('u');
+
+			if ((Game.letters.indexOf('s') <0) && (Game.letters.indexOf('t') <0) && (Game.letters.indexOf('u')) < 0) 
+			{
+				if ((s.innerHTML == 'O') && (t.innerHTML == 'O') && (u.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//u exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomTopLeft'] = 'yes';
+					Game.letters.push('s', 't', 'u');
+					flash(s, t, u,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalBottomTopLeftHalf'-t u v (t an u already selected)
+		if (oScores['horizontalBottomTopLeftHalf'] != 'yes')
+		{
+			let v = document.getElementById('v');
+
+			if ((Game.letters.indexOf('t') <0) && (Game.letters.indexOf('u') <0) && (Game.letters.indexOf('v')) < 0) 
+			{
+				if ((t.innerHTML == 'O') && (u.innerHTML == 'O') && (v.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//v exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('v');
+					//u exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomTopLeftHalf'] = 'yes';
+					Game.letters.push('t', 'u', 'v');
+					flash(v, t, u,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalBottomTopRightHalf'-u v w (u and v already selected)
+		if (oScores['horizontalBottomTopRightHalf'] != 'yes')
+		{
+			let w = document.getElementById('w');
+
+			if ((Game.letters.indexOf('w') <0) && (Game.letters.indexOf('u') <0) && (Game.letters.indexOf('v')) < 0) 
+			{
+				if ((u.innerHTML == 'O') && (v.innerHTML == 'O') && (w.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//v exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('v');
+					//u exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomTopRightHalf'] = 'yes';
+					Game.letters.push('w', 'u', 'v');
+					flash(v, w, u,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalBottomTopRight'-v w x (all already selected)
+		if (oScores['horizontalBottomTopRight'] != 'yes')
+		{
+			if ((Game.letters.indexOf('w') <0) && (Game.letters.indexOf('w') <0) && (Game.letters.indexOf('v')) < 0) 
+			{
+				if ((v.innerHTML == 'O') && (w.innerHTML == 'O') && (x.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//v exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('v');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomTopRight'] = 'yes';
+					Game.letters.push('w', 'x', 'v');
+					flash(v, w, x,'green', 'blue');
+				}
+			}
+		}
+
+
+		//'horizontalBottomMidLeft'-y z aa (y already selected)
+		if (oScores['horizontalBottomMidLeft'] != 'yes')
+		{
+			let z = document.getElementById('z');
+			let aa = document.getElementById('aa');
+
+			if ((Game.letters.indexOf('y') <0) && (Game.letters.indexOf('z') <0) && (Game.letters.indexOf('aa')) < 0) 
+			{
+				if ((y.innerHTML == 'O') && (z.innerHTML == 'O') && (aa.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//z exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('z');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomMidLeft'] = 'yes';
+					Game.letters.push('y', 'z', 'aa');
+					flash(y, z, aa,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalBottomMidLeftHalf'-z aa bb (z an aa already selected)
+		if (oScores['horizontalBottomMidLeftHalf'] != 'yes')
+		{
+			let bb = document.getElementById('bb');
+
+			if ((Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('z') <0) && (Game.letters.indexOf('aa')) < 0) 
+			{
+				if ((z.innerHTML == 'O') && (aa.innerHTML == 'O') && (bb.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//z exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('z');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomMidLeftHalf'] = 'yes';
+					Game.letters.push('bb', 'z', 'aa');
+					flash(bb, z, aa,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalBottomMidRightHalf'-aa bb cc (aa and bb already selected)
+		if (oScores['horizontalBottomMidRightHalf'] != 'yes')
+		{
+			let cc = document.getElementById('cc');
+
+			if ((Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('cc') <0) && (Game.letters.indexOf('aa')) < 0) 
+			{
+				if ((aa.innerHTML == 'O') && (bb.innerHTML == 'O') && (cc.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//cc exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('cc');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomMidRightHalf'] = 'yes';
+					Game.letters.push('bb', 'cc', 'aa');
+					flash(bb, cc, aa,'green', 'blue');
+				}
+			}
+		}
+
+		//'horizontalBottomMidRight'-bb cc dd (all already selected)
+		if (oScores['horizontalBottomMidRight'] != 'yes')
+		{
+			if ((Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('cc') <0) && (Game.letters.indexOf('dd')) < 0) 
+			{
+				if ((bb.innerHTML == 'O') && (cc.innerHTML == 'O') && (dd.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//cc exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('cc');
+					scoreO.innerHTML = oScores['score']; 
+					oScores['horizontalBottomMidRight'] = 'yes';
+					Game.letters.push('bb', 'cc', 'dd');
+					flash(bb, cc, dd,'green', 'blue');
+				}
+			}
+		}
+
+
+
+
+		//verticalLeftMidTop-b h n (all already selected)
+		if (oScores['verticalLeftMidTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('b') <0) && (Game.letters.indexOf('h') <0) && (Game.letters.indexOf('n')) < 0) 
+			{
+				if ((b.innerHTML == 'O') && (h.innerHTML == 'O') && (n.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//h exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('h');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftMidTop'] = 'yes'; 
+					Game.letters.push('b', 'h', 'n');
+					flash(b, h, n,'green', 'blue');
+				}
+			}
+		}
+
+		//verticalLeftMidTopHalf-h n t (all already selected)
+		if (oScores['verticalLeftMidTopHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('t') <0) && (Game.letters.indexOf('h') <0) && (Game.letters.indexOf('n')) < 0) 
+			{
+				if ((h.innerHTML == 'O') && (n.innerHTML == 'O') && (t.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//h exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('h');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftMidTopHalf'] = 'yes';
+					Game.letters.push('t', 'h', 'n');
+					flash(t, h, n,'green', 'blue'); 
+				}
+			}
+		}
+
+
+		//verticalLeftMidBottomHalf-n t z (all already selected)
+		if (oScores['verticalLeftMidBottomHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('t') <0) && (Game.letters.indexOf('z') <0) && (Game.letters.indexOf('n')) < 0) 
+			{
+				if ((n.innerHTML == 'O') && (t.innerHTML == 'O') && (z.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//z exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('z');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftMidBottomHalf'] = 'yes'; 
+					Game.letters.push('t', 'z', 'n'); 
+					flash(t, z, n,'green', 'blue');
+				}
+			}
+		}
+
+
+		//verticalLeftMidBottom-t z ff (all already selected)
+		if (oScores['verticalLeftMidBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('t') <0) && (Game.letters.indexOf('z') <0) && (Game.letters.indexOf('ff')) < 0) 
+			{
+				if ((t.innerHTML == 'O') && (z.innerHTML == 'O') && (ff.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//z exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('z');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftMidBottom'] = 'yes'; 
+					Game.letters.push('t', 'z', 'ff');
+					flash(t, z, ff,'green', 'blue');
+				}
+			}
+		}
+
+		//verticalLeftRightTop-c i o (all already selected)
+		if (oScores['verticalLeftRightTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('c') <0) && (Game.letters.indexOf('i') <0) && (Game.letters.indexOf('o')) < 0) 
+			{
+				if ((c.innerHTML == 'O') && (i.innerHTML == 'O') && (o.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//o exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('o');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftRightTop'] = 'yes'; 
+					Game.letters.push('c', 'i', 'o');
+					flash(c, i, o,'green', 'blue');
+				}
+			}
+		}
+
+		//verticalLeftRightTopHalf-i o u (all already selected)
+		if (oScores['verticalLeftRightTopHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('u') <0) && (Game.letters.indexOf('i') <0) && (Game.letters.indexOf('o')) < 0) 
+			{
+				if ((i.innerHTML == 'O') && (o.innerHTML == 'O') && (u.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//o exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('o');
+					//u exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftRightTopHalf'] = 'yes';
+					Game.letters.push('u', 'i', 'o');
+					flash(u, i, o,'green', 'blue'); 
+				}
+			}
+		}
+
+
+		//verticalLeftRightBottomHalf-o u aa (all already selected)
+		if (oScores['verticalLeftRightBottomHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('u') <0) && (Game.letters.indexOf('aa') <0) && (Game.letters.indexOf('o')) < 0) 
+			{
+				if ((o.innerHTML == 'O') && (u.innerHTML == 'O') && (aa.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//o exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('o');
+					//u exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftRightBottomHalf'] = 'yes'; 
+					Game.letters.push('u', 'aa', 'o');
+					flash(u, aa, o,'green', 'blue');
+				}
+			}
+		}
+
+
+		//verticalLeftRightBottom-u aa gg (all already selected)
+		if (oScores['verticalLeftRightBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('u') <0) && (Game.letters.indexOf('aa') <0) && (Game.letters.indexOf('gg')) < 0) 
+			{
+				if ((u.innerHTML == 'O') && (aa.innerHTML == 'O') && (gg.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//u exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalLeftRightBottom'] = 'yes'; 
+					Game.letters.push('u', 'aa', 'gg');
+					flash(u, aa, gg,'green', 'blue');
+				}
+			}
+		}
+
+
+		//verticalRightLeftTop-d j p (all already selected)
+		if (oScores['verticalRightLeftTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('d') <0) && (Game.letters.indexOf('j') <0) && (Game.letters.indexOf('p')) < 0) 
+			{
+				if ((d.innerHTML == 'O') && (j.innerHTML == 'O') && (p.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('p');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightLeftTop'] = 'yes'; 
+					Game.letters.push('d', 'j', 'p');
+					flash(d, j, p,'green', 'blue');
+				}
+			}
+		}
+
+		//verticalRightLeftTopHalf-j p v (all already selected)
+		if (oScores['verticalRightLeftTopHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('j') <0) && (Game.letters.indexOf('p')) < 0) 
+			{
+				if ((j.innerHTML == 'O') && (p.innerHTML == 'O') && (v.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('p');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightLeftTopHalf'] = 'yes';
+					Game.letters.push('v', 'j', 'p'); 
+					flash(v, j, p,'green', 'blue');
+				}
+			}
+		}
+
+
+		//verticalRightLeftBottomHalf-p v bb (all already selected)
+		if (oScores['verticalRightLeftBottomHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('p')) < 0) 
+			{
+				if ((p.innerHTML == 'O') && (v.innerHTML == 'O') && (bb.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//v exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('v');
+					//p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('p');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightLeftBottomHalf'] = 'yes';
+					Game.letters.push('v', 'bb', 'p'); 
+					flash(v, bb, p,'green', 'blue');
+				}
+			}
+		}
+
+
+		//verticalRightLeftBottom-v bb hh (all already selected)
+		if (oScores['verticalRightLeftBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('hh')) < 0) 
+			{
+				if ((v.innerHTML == 'O') && (bb.innerHTML == 'O') && (hh.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//v exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('v');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightLeftBottom'] = 'yes'; 
+					Game.letters.push('v', 'bb', 'hh');
+					flash(v, bb, hh,'green', 'blue');
+				}
+			}
+		}
+
+
+		//verticalRightMidTop-e k q (all already selected)
+		if (oScores['verticalRightMidTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('e') <0) && (Game.letters.indexOf('k') <0) && (Game.letters.indexOf('q')) < 0) 
+			{
+				if ((e.innerHTML == 'O') && (k.innerHTML == 'O') && (q.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//k exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('k');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightMidTop'] = 'yes'; 
+					Game.letters.push('e', 'k', 'q');
+					flash(e, k, q,'green', 'blue');
+				}
+			}
+		}
+
+		//verticalRightMidTopHalf-k q w (all already selected)
+		if (oScores['verticalRightMidTopHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('w') <0) && (Game.letters.indexOf('k') <0) && (Game.letters.indexOf('q')) < 0) 
+			{
+				if ((k.innerHTML == 'O') && (q.innerHTML == 'O') && (w.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//k exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('k');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightMidTopHalf'] = 'yes';
+					Game.letters.push('w', 'k', 'q');
+					flash(w, k, q,'green', 'blue'); 
+				}
+			}
+		}
+
+
+		//verticalRightMidBottomHalf-q w cc (all already selected)
+		if (oScores['verticalRightMidBottomHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('w') <0) && (Game.letters.indexOf('cc') <0) && (Game.letters.indexOf('q')) < 0) 
+			{
+				if ((q.innerHTML == 'O') && (w.innerHTML == 'O') && (cc.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//cc exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('cc');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightMidBottomHalf'] = 'yes'; 
+					Game.letters.push('w', 'cc', 'q');
+					flash(w, cc, q,'green', 'blue'); 
+				}
+			}
+		}
+
+
+		//verticalRightMidBottom-w cc ii (all already selected)
+		if (oScores['verticalRightMidBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('w') <0) && (Game.letters.indexOf('cc') <0) && (Game.letters.indexOf('ii')) < 0) 
+			{
+				if ((w.innerHTML == 'O') && (cc.innerHTML == 'O') && (ii.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//cc exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('cc');
+					scoreO.innerHTML = oScores['score'];
+					oScores['verticalRightMidBottom'] = 'yes';
+					Game.letters.push('w', 'cc', 'ii'); 
+					flash(w, cc, ii,'green', 'blue'); 
+				}
+			}
+		}
+
+
+
+		//------------------The diagonal back--------------------
+
+		//diagonalBackLargestTop-a h o (all already selected)
+		if (oScores['diagonalBackLargestTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('a') <0) && (Game.letters.indexOf('h') <0) && (Game.letters.indexOf('o')) < 0) 
+			{
+				if ((a.innerHTML == 'O') && (h.innerHTML == 'O') && (o.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//a,h,o exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('a','h','o');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackLargestTop'] = 'yes';
+					Game.letters.push('a', 'h', 'o'); 
+					flash(a, h, o,'green', 'blue');
+				}
+			}
+		}
+
+		//diagonalBackLargestTopHalf-h o v (all already selected)
+		if (oScores['diagonalBackLargestTopHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('h') <0) && (Game.letters.indexOf('o')) < 0) 
+			{
+				if ((h.innerHTML == 'O') && (o.innerHTML == 'O') && (v.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//v,h,o exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('v','h','o');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackLargestTopHalf'] = 'yes';
+					Game.letters.push('v', 'h', 'o'); 
+					flash(v, h, o,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalBackLargestBottomHalf-o v cc (all already selected)
+		if (oScores['diagonalBackLargestBottomHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('cc') <0) && (Game.letters.indexOf('o')) < 0) 
+			{
+				if ((o.innerHTML == 'O') && (v.innerHTML == 'O') && (cc.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//v,cc,o exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('v','cc','o');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackLargestBottomHalf'] = 'yes'; 
+					Game.letters.push('v', 'cc', 'o');
+					flash(v, cc, o,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalBackLargestBottom-v cc jj (all already selected)
+		if (oScores['diagonalBackLargestBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('cc') <0) && (Game.letters.indexOf('jj')) < 0) 
+			{
+				if ((v.innerHTML == 'O') && (cc.innerHTML == 'O') && (jj.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//v,cc,jj exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('v','cc','jj');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackLargestBottom'] = 'yes'; 
+					Game.letters.push('v', 'cc', 'jj');
+					flash(v, cc, jj,'green', 'blue');
+				}
+			}
+		}
+
+
+		//-----------------ABOVE THE DIAGONAL BACK-----------------------
+		//diagonalBackTopSmallTop-b i p (all already selected)
+		if (oScores['diagonalBackTopSmallTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('b') <0) && (Game.letters.indexOf('i') <0) && (Game.letters.indexOf('p')) < 0) 
+			{
+				if ((b.innerHTML == 'O') && (i.innerHTML == 'O') && (p.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('p');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackTopSmallTop'] = 'yes'; 
+					Game.letters.push('b', 'i', 'p');
+					flash(b, i, p,'green', 'blue');
+				}
+			}
+		}
+
+		//diagonalBackTopSmallMid-i p w (all already selected)
+		if (oScores['diagonalBackTopSmallMid'] != 'yes')
+		{
+			if ((Game.letters.indexOf('w') <0) && (Game.letters.indexOf('i') <0) && (Game.letters.indexOf('p')) < 0) 
+			{
+				if ((i.innerHTML == 'O') && (p.innerHTML == 'O') && (w.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('p');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackTopSmallMid'] = 'yes'; 
+					Game.letters.push('w', 'i', 'p');
+					flash(w, i, p,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalBackTopSmallBottom-p w dd (all already selected)
+		if (oScores['diagonalBackTopSmallBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('w') <0) && (Game.letters.indexOf('dd') <0) && (Game.letters.indexOf('p')) < 0) 
+			{
+				if ((p.innerHTML == 'O') && (w.innerHTML == 'O') && (dd.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('p');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackTopSmallBottom'] = 'yes'; 
+					Game.letters.push('w', 'dd', 'p');
+					flash(w, dd, p,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalBackTopSmallerTop-c j q (all already selected)
+		if (oScores['diagonalBackTopSmallerTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('c') <0) && (Game.letters.indexOf('j') <0) && (Game.letters.indexOf('q')) < 0) 
+			{
+				if ((c.innerHTML == 'O') && (j.innerHTML == 'O') && (q.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackTopSmallerTop'] = 'yes'; 
+					Game.letters.push('c', 'j', 'q');
+					flash(c, j, q,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalBackTopSmallerBottom-j q x (all already selected)
+		if (oScores['diagonalBackTopSmallerBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('x') <0) && (Game.letters.indexOf('j') <0) && (Game.letters.indexOf('q')) < 0) 
+			{
+				if ((j.innerHTML == 'O') && (q.innerHTML == 'O') && (x.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackTopSmallerBottom'] = 'yes'; 
+					Game.letters.push('x', 'j', 'q');
+					flash(x, j, q,'green', 'blue');
+				}
+			}
+		}
+
+		//diagonalBackTopSmallest-d k r (all already selected)
+		if (oScores['diagonalBackTopSmallest'] != 'yes')
+		{
+			if ((Game.letters.indexOf('d') <0) && (Game.letters.indexOf('k') <0) && (Game.letters.indexOf('r')) < 0) 
+			{
+				if ((d.innerHTML == 'O') && (k.innerHTML == 'O') && (r.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackTopSmallest'] = 'yes'; 
+					Game.letters.push('d', 'k', 'r');
+					flash(d, k, r,'green', 'blue');
+				}
+			}
+		}
+
+
+
+		//------------------BELOW THE DIAGONAL BACK--------------------
+		//diagonalBackBottomSmallTop-g n u (all already selected)
+		if (oScores['diagonalBackBottomSmallTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('g') <0) && (Game.letters.indexOf('n') <0) && (Game.letters.indexOf('u')) < 0) 
+			{
+				if ((g.innerHTML == 'O') && (n.innerHTML == 'O') && (u.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//u exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackBottomSmallTop'] = 'yes';
+					Game.letters.push('g', 'n', 'u'); 
+					flash(g, n, u,'green', 'blue');
+				}
+			}
+		}
+
+		//diagonalBackBottomSmallMid-n u bb (all already selected)
+		if (oScores['diagonalBackBottomSmallMid'] != 'yes')
+		{
+			if ((Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('n') <0) && (Game.letters.indexOf('u')) < 0) 
+			{
+				if ((n.innerHTML == 'O') && (u.innerHTML == 'O') && (bb.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//u exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackBottomSmallMid'] = 'yes'; 
+					Game.letters.push('bb', 'n', 'u'); 
+					flash(bb, n, u,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalBackBottomSmallBottom-u bb ii (all already selected)
+		if (oScores['diagonalBackBottomSmallBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('ii') <0) && (Game.letters.indexOf('u')) < 0) 
+			{
+				if ((u.innerHTML == 'O') && (bb.innerHTML == 'O') && (ii.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//u exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackBottomSmallBottom'] = 'yes';
+					Game.letters.push('bb', 'ii', 'u'); 
+					flash(bb, ii, u,'green', 'blue'); 
+				}
+			}
+		}
+
+
+		
+		//diagonalBackBottomSmallerTop-m t aa (all already selected)
+		if (oScores['diagonalBackBottomSmallerTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('m') <0) && (Game.letters.indexOf('t') <0) && (Game.letters.indexOf('aa')) < 0) 
+			{
+				if ((m.innerHTML == 'O') && (t.innerHTML == 'O') && (aa.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackBottomSmallerTop'] = 'yes'; 
+					Game.letters.push('m', 't', 'aa');
+					flash(m, t, aa,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalBackBottomSmallerBottom-t aa hh (all already selected)
+		if (oScores['diagonalBackBottomSmallerBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('hh') <0) && (Game.letters.indexOf('t') <0) && (Game.letters.indexOf('aa')) < 0) 
+			{
+				if ((t.innerHTML == 'O') && (aa.innerHTML == 'O') && (hh.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackBottomSmallerBottom'] = 'yes';
+					Game.letters.push('hh', 't', 'aa');
+					flash(hh, t, aa,'green', 'blue'); 
+				}
+			}
+		}
+
+		//diagonalBackBottomSmallest-s z gg (all already selected)
+		if (oScores['diagonalBackBottomSmallest'] != 'yes')
+		{
+			if ((Game.letters.indexOf('s') <0) && (Game.letters.indexOf('z') <0) && (Game.letters.indexOf('gg')) < 0) 
+			{
+				if ((s.innerHTML == 'O') && (z.innerHTML == 'O') && (gg.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//z exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('z');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalBackBottomSmallest'] = 'yes';
+					Game.letters.push('s', 'z', 'gg');
+					flash(s, z, gg,'green', 'blue'); 
+				}
+			}
+		}
+
+
+		//------------------THE DIAGONAL FORWARD--------------------
+		//diagonalForwardLargestTop-f k p (all already selected)
+		if (oScores['diagonalForwardLargestTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('f') <0) && (Game.letters.indexOf('k') <0) && (Game.letters.indexOf('p')) < 0) 
+			{
+				if ((f.innerHTML == 'O') && (k.innerHTML == 'O') && (p.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//f,k,p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('f','k','p');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardLargestTop'] = 'yes'; 
+					Game.letters.push('f', 'k', 'p');
+					flash(f, k, p,'green', 'blue');
+				}
+			}
+		}
+
+		//diagonalForwardLargestTopHalf-k p u (all already selected)
+		if (oScores['diagonalForwardLargestTopHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('u') <0) && (Game.letters.indexOf('k') <0) && (Game.letters.indexOf('p')) < 0) 
+			{
+				if ((k.innerHTML == 'O') && (p.innerHTML == 'O') && (u.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//u,k,p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u','k','p');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardLargestTopHalf'] = 'yes';
+					Game.letters.push('u', 'k', 'p'); 
+					flash(u, k, p,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalForwardLargestBottomHalf-p u z (all already selected)
+		if (oScores['diagonalForwardLargestBottomHalf'] != 'yes')
+		{
+			if ((Game.letters.indexOf('u') <0) && (Game.letters.indexOf('z') <0) && (Game.letters.indexOf('p')) < 0) 
+			{
+				if ((p.innerHTML == 'O') && (u.innerHTML == 'O') && (z.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//u,z,p exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u','z','p');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardLargestBottomHalf'] = 'yes'; 
+					Game.letters.push('u', 'z', 'p');
+					flash(u, z, p,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalForwardLargestBottom-u z ee (all already selected)
+		if (oScores['diagonalForwardLargestBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('u') <0) && (Game.letters.indexOf('z') <0) && (Game.letters.indexOf('ee')) < 0) 
+			{
+				if ((u.innerHTML == 'O') && (z.innerHTML == 'O') && (ee.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//u,z,ee exists in the diagonalForwardMatch
+					oScores['diagonalForwardMatch'].push('u','z','ee');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardLargestBottom'] = 'yes';
+					Game.letters.push('u', 'z', 'ee');
+					flash(u, z, ee,'green', 'blue'); 
+				}
+			}
+		}
+
+
+		//-----------------ABOVE THE DIAGONAL FORWARD-----------------------
+		//diagonalForwardTopSmallTop-e j o (all already selected)
+		if (oScores['diagonalForwardTopSmallTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('e') <0) && (Game.letters.indexOf('j') <0) && (Game.letters.indexOf('o')) < 0) 
+			{
+				if ((e.innerHTML == 'O') && (j.innerHTML == 'O') && (o.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardTopSmallTop'] = 'yes'; 
+					Game.letters.push('e', 'j', 'o');
+					flash(e, j, o,'green', 'blue');
+				}
+			}
+		}
+
+		//diagonalForwardTopSmallMid-j o t (all already selected)
+		if (oScores['diagonalForwardTopSmallMid'] != 'yes')
+		{
+			if ((Game.letters.indexOf('t') <0) && (Game.letters.indexOf('j') <0) && (Game.letters.indexOf('o')) < 0) 
+			{
+				if ((j.innerHTML == 'O') && (o.innerHTML == 'O') && (t.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardTopSmallMid'] = 'yes'; 
+					Game.letters.push('t', 'j', 'o');
+					flash(t, j, o,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalForwardTopSmallBottom-o t y (all already selected)
+		if (oScores['diagonalForwardTopSmallBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('t') <0) && (Game.letters.indexOf('y') <0) && (Game.letters.indexOf('o')) < 0) 
+			{
+				if ((o.innerHTML == 'O') && (t.innerHTML == 'O') && (y.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardTopSmallBottom'] = 'yes';
+					Game.letters.push('t', 'y', 'o');
+					flash(t, y, o,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalForwardTopSmallerTop-d i n (all already selected)
+		if (oScores['diagonalForwardTopSmallerTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('d') <0) && (Game.letters.indexOf('i') <0) && (Game.letters.indexOf('n')) < 0) 
+			{
+				if ((d.innerHTML == 'O') && (i.innerHTML == 'O') && (n.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardTopSmallerTop'] = 'yes'; 
+					Game.letters.push('d', 'i', 'n');
+					flash(d, i, n,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalForwardTopSmallerBottom-i n s (all already selected)
+		if (oScores['diagonalForwardTopSmallerBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('s') <0) && (Game.letters.indexOf('i') <0) && (Game.letters.indexOf('n')) < 0) 
+			{
+				if ((i.innerHTML == 'O') && (n.innerHTML == 'O') && (s.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardTopSmallerBottom'] = 'yes'; 
+					Game.letters.push('s', 'i', 'n');
+					flash(s, i, n,'green', 'blue');
+				}
+			}
+		}
+
+		//diagonalForwardTopSmallest-c h m (all already selected)
+		if (oScores['diagonalForwardTopSmallest'] != 'yes')
+		{
+			if ((Game.letters.indexOf('c') <0) && (Game.letters.indexOf('h') <0) && (Game.letters.indexOf('m')) < 0) 
+			{
+				if ((c.innerHTML == 'O') && (h.innerHTML == 'O') && (m.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardTopSmallest'] = 'yes'; 
+					Game.letters.push('c', 'h', 'm');
+					flash(c, h, m,'green', 'blue');
+				}
+			}
+		}
+
+
+		//------------------BELOW THE DIAGONAL FORWARD--------------------
+		//diagonalForwardBottomSmallTop-l q v (all already selected)
+		if (oScores['diagonalForwardBottomSmallTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('l') <0) && (Game.letters.indexOf('q') <0) && (Game.letters.indexOf('v')) < 0) 
+			{
+				if ((l.innerHTML == 'O') && (q.innerHTML == 'O') && (v.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//v exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('v');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardBottomSmallTop'] = 'yes'; 
+					Game.letters.push('l', 'q', 'v');
+					flash(l, q, v,'green', 'blue');
+				}
+			}
+		}
+
+		//diagonalForwardBottomSmallMid-q v aa (all already selected)
+		if (oScores['diagonalForwardBottomSmallMid'] != 'yes')
+		{
+			if ((Game.letters.indexOf('aa') <0) && (Game.letters.indexOf('q') <0) && (Game.letters.indexOf('v')) < 0) 
+			{
+				if ((q.innerHTML == 'O') && (v.innerHTML == 'O') && (aa.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//v exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('v');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardBottomSmallMid'] = 'yes';
+					Game.letters.push('aa', 'q', 'v'); 
+					flash(aa, q, v,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalForwardBottomSmallBottom-v aa ff (all already selected)
+		if (oScores['diagonalForwardBottomSmallBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('aa') <0) && (Game.letters.indexOf('ff') <0) && (Game.letters.indexOf('v')) < 0) 
+			{
+				if ((v.innerHTML == 'O') && (aa.innerHTML == 'O') && (ff.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//v exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('v');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardBottomSmallBottom'] = 'yes'; 
+					Game.letters.push('aa', 'ff', 'v'); 
+					flash(aa, ff, v,'green', 'blue');
+				}
+			}
+		}
+
+
+		
+		//diagonalForwardBottomSmallerTop-r w bb (all already selected)
+		if (oScores['diagonalForwardBottomSmallerTop'] != 'yes')
+		{
+			if ((Game.letters.indexOf('r') <0) && (Game.letters.indexOf('w') <0) && (Game.letters.indexOf('bb')) < 0) 
+			{
+				if ((r.innerHTML == 'O') && (w.innerHTML == 'O') && (bb.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardBottomSmallerTop'] = 'yes'; 
+					Game.letters.push('r', 'w', 'bb');
+					flash(r, w, bb,'green', 'blue');
+				}
+			}
+		}
+
+
+		//diagonalForwardBottomSmallerBottom-w bb gg (all already selected)
+		if (oScores['diagonalForwardBottomSmallerBottom'] != 'yes')
+		{
+			if ((Game.letters.indexOf('gg') <0) && (Game.letters.indexOf('w') <0) && (Game.letters.indexOf('bb')) < 0) 
+			{
+				if ((w.innerHTML == 'O') && (bb.innerHTML == 'O') && (gg.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardBottomSmallerBottom'] = 'yes'; 
+					Game.letters.push('gg', 'w', 'bb');
+					flash(gg, w, bb,'green', 'blue');
+				}
+			}
+		}
+
+		//diagonalForwardBottomSmallest-x cc hh (all already selected)
+		if (oScores['diagonalForwardBottomSmallest'] != 'yes')
+		{
+			if ((Game.letters.indexOf('x') <0) && (Game.letters.indexOf('cc') <0) && (Game.letters.indexOf('hh')) < 0) 
+			{
+				if ((x.innerHTML == 'O') && (cc.innerHTML == 'O') && (hh.innerHTML == 'O'))
+				{
+					oScores['score'] += 1;
+					//cc exists in the diagonalBackwardMatch
+					oScores['diagonalBackwardMatch'].push('cc');
+					scoreO.innerHTML = oScores['score'];
+					oScores['diagonalForwardBottomSmallest'] = 'yes'; 
+					Game.letters.push('x', 'cc', 'hh');
+					flash(x, cc, hh,'green', 'blue');
+				}
+			}
+		}
+
+
+		/*------------check if player O has bagged a diagonal back gold point----------------*/
+		if (oScores['diagonalBackGold'] == 'no') 
+		{
+			let diagonalBackGold = ['a','h','o','v','cc','jj'];
+
+			let goldDiagonalBack = false;
+
+			for (let i = 0; i<diagonalBackGold.length;i++)
+			{
+				if(inArray(diagonalBackGold[i], oScores['diagonalBackwardMatch']))
+				{
+					goldDiagonalBack = true;
+				}
+				else
+				{
+					goldDiagonalBack = false;
+					break;
+				}
+			}
+
+
+
+			if (goldDiagonalBack)
+			{
+				flashGold('diagonalBackGoldBlue');
+			}
+		}
+
+
+
+		/*------------check if player O has bagged a diagonal forward gold point----------------*/
+		if (oScores['diagonalFrontGold'] == 'no') 
+		{
+			let diagonalForwardGold = ['f','k','p','u','z','ee'];
+
+			let goldDiagonalForward = false;
+
+			for (let i = 0; i<diagonalForwardGold.length;i++)
+			{
+				if(inArray(diagonalForwardGold[i], oScores['diagonalForwardMatch']))
+				{
+					goldDiagonalForward = true;
+				}
+				else
+				{
+					goldDiagonalForward = false;
+					break;
+				}
+			}
+
+
+
+			if (goldDiagonalForward)
+			{
+				flashGold('diagonalForwardGoldBlue');
+			}
+		}
+
+
+
+		checkScore();
+
+
+	}
+
+
+
+
+
+	//TODO: Please ensure to add the flash call to every block in updateXScore (eg flash(gg, w, bb,'green', 'blue');)
+	function updateXScore()
+	{
+				//'horizontalTopLeft': 'no',
+		let a = document.getElementById('a');
+		let b = document.getElementById('b');
+		let c = document.getElementById('c');
+
+		if (xScores['horizontalTopLeft'] != 'yes')
+		{
+			if ((Game.letters.indexOf('a') <0) && (Game.letters.indexOf('b') <0) && (Game.letters.indexOf('c')) < 0) 
+			{
+				if ((a.innerHTML == 'X') && (b.innerHTML == 'X') && (c.innerHTML == 'X'))
+				{
+					xScores['score'] += 1;
+					scoreX.innerHTML = xScores['score'];
+					xScores['diagonalBackwardMatch'].push('a');
+					//a exists in the diagonalBackwardMatch
+					xScores['diagonalBackwardMatch'].push('a');
+					xScores['horizontalTopLeft'] = 'yes' 
+					Game.letters.push('a', 'b','c');
+					flash(a, b, c,'green', 'red');
+				}
+			}
+		}
+
+		//'horizontalTopLeftHalf': 'no',
+		if (xScores['horizontalTopLeftHalf'] != 'yes')
+		{
+			let b = document.getElementById('b');
+			let c = document.getElementById('c');
+			let d = document.getElementById('d');
+
+			if ((Game.letters.indexOf('b') <0) && (Game.letters.indexOf('c') <0) && (Game.letters.indexOf('d')) < 0)
+			{
+			
+				if ((b.innerHTML == 'X') && (c.innerHTML == 'X') && (d.innerHTML == 'X'))
+				{
+					xScores['score'] += 1;
+					scoreX.innerHTML = xScores['score'];
+					xScores['horizontalTopLeftHalf'] = 'yes';
+					Game.letters.push('d', 'b','c');
+					flash(d, b, c,'green', 'red');
+				}
+			}
+		}
+
+		//'horizontalTopRightHalf': 'no',
+		if (xScores['horizontalTopRightHalf'] != 'yes')
+		{
+			let c = document.getElementById('c');
+			let d = document.getElementById('d');
+			let e = document.getElementById('e');
+			if ((Game.letters.indexOf('c') <0) && (Game.letters.indexOf('d') <0) && (Game.letters.indexOf('e')) < 0)
+			{
+				if ((c.innerHTML == 'X') && (d.innerHTML == 'X') && (e.innerHTML == 'X'))
+				{
+					xScores['score'] += 1;
+					scoreX.innerHTML = xScores['score'];
+					xScores['horizontalTopRightHalf'] = 'yes';
+					Game.letters.push('d', 'e','c');
+					flash(d, e, c,'green', 'red');
+				}
+			}
+		}
+
+		//'horizontalTopRight': 'no',
+		if (xScores['horizontalTopRight'] != 'yes')
+		{
+			let d = document.getElementById('d');
+			let e = document.getElementById('e');
+			let f = document.getElementById('f');
+			if ((Game.letters.indexOf('d') <0) && (Game.letters.indexOf('e') <0) && (Game.letters.indexOf('f')) < 0)
+			{
+				if ((d.innerHTML == 'X') && (e.innerHTML == 'X') && (f.innerHTML == 'X'))
+				{
+					xScores['score'] += 1;
+					//f exists in the diagonalForwardMatch
+					xScores['diagonalForwardMatch'].push('f');
+					scoreX.innerHTML = xScores['score'];
+					xScores['horizontalTopRight'] = 'yes';
+					Game.letters.push('d', 'e','f');
+					flash(d, e, f,'green', 'red');
+				}
+			}
+		}
+
+
+		//verticalRightTop-flr (and f already selected)
+		let l = document.getElementById('l');
+		let r = document.getElementById('r');
+
+	if (xScores['verticalRightTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('f') <0) && (Game.letters.indexOf('l') <0) && (Game.letters.indexOf('r')) < 0) 
+		{
+			if ((f.innerHTML == 'X') && (l.innerHTML == 'X') && (r.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//f exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('f');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightTop'] = 'yes';
+				Game.letters.push('f', 'l','r');
+				flash(f, l, r,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//verticalRightTopHalf-lrx (and lr already selected)
+		let x = document.getElementById('x');
+
+	if (xScores['verticalRightTopHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('l') <0) && (Game.letters.indexOf('r') <0) && (Game.letters.indexOf('x')) < 0) 
+		{
+			if ((l.innerHTML == 'X') && (r.innerHTML == 'X') && (x.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightTopHalf'] = 'yes';
+				Game.letters.push('x', 'l','r'); 
+				flash(x, l, r,'green', 'red');
+			}
+		}
+	}
+
+		//verticalRightBottomHalf-dd x r (x and r already selected)
+		let dd = document.getElementById('dd');
+
+	if (xScores['verticalRightBottomHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('dd') <0) && (Game.letters.indexOf('x') <0) && (Game.letters.indexOf('r')) < 0) 
+		{
+			if ((dd.innerHTML == 'X') && (x.innerHTML == 'X') && (r.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightBottomHalf'] = 'yes';
+				Game.letters.push('dd', 'x','r');
+				flash(x, dd, r,'green', 'red'); 
+			}
+		}
+	}
+
+		//verticalRightBottom-x dd jj (x and dd already selected)
+		let jj = document.getElementById('jj');
+
+	if (xScores['verticalRightBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('x') <0) && (Game.letters.indexOf('dd') <0) && (Game.letters.indexOf('jj')) < 0) 
+		{
+			if ((x.innerHTML == 'X') && (dd.innerHTML == 'X') && (jj.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//jj exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('jj');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightBottom'] = 'yes';
+				Game.letters.push('x', 'dd','jj');
+				flash(x, dd, jj,'green', 'red');  
+			}
+		}
+	}
+
+		//'horizontalBottomRight'-hh ii jj (jj already selected)
+	if (xScores['horizontalBottomRight'] != 'yes')
+	{
+		if ((Game.letters.indexOf('hh') <0) && (Game.letters.indexOf('ii') <0) && (Game.letters.indexOf('jj')) < 0) 
+		{
+			let hh = document.getElementById('hh');
+			let ii = document.getElementById('ii');
+			if ((hh.innerHTML == 'X') && (ii.innerHTML == 'X') && (jj.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//jj exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('jj');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomRight'] = 'yes';
+				Game.letters.push('hh', 'ii','jj');
+				flash(hh, ii, jj,'green', 'red'); 
+			}
+		}
+	}
+
+		//'horizontalBottomRightHalf'-gg hh ii (hh and ii already selected)
+	if (xScores['horizontalBottomRightHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('gg') <0) && (Game.letters.indexOf('hh') <0) && (Game.letters.indexOf('ii')) < 0) 
+		{
+			let gg = document.getElementById('gg');
+			if ((gg.innerHTML == 'X') && (hh.innerHTML == 'X') && (ii.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//jj exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('jj');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomRightHalf'] = 'yes';
+				Game.letters.push('hh', 'ii','gg');
+				flash(hh, ii, gg,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalBottomLeftHalf'-ff gg hh (gg and hh already selected)
+	if (xScores['horizontalBottomLeftHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('ff') <0) && (Game.letters.indexOf('gg') <0) && (Game.letters.indexOf('hh')) < 0) 
+		{
+			let ff = document.getElementById('ff');
+			if ((ff.innerHTML == 'X') && (gg.innerHTML == 'X') && (hh.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomLeftHalf'] = 'yes';
+				Game.letters.push('ff', 'gg','hh');
+				flash(hh, gg, ff,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalBottomLeft'-ee ff gg (ff and gg already selected)
+	if (xScores['horizontalBottomLeft'] != 'yes')
+	{
+		if ((Game.letters.indexOf('ee') <0) && (Game.letters.indexOf('ff') <0) && (Game.letters.indexOf('gg')) < 0) 
+		{
+			let ee = document.getElementById('ee');
+			if ((ee.innerHTML == 'X') && (ff.innerHTML == 'X') && (gg.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomLeft'] = 'yes';
+				Game.letters.push('ff', 'gg','ee');
+				flash(gg, ee, ff,'green', 'red');
+			}
+		}
+	}
+
+		//verticalLeftTop-a g m (a and g already selected)
+		let m = document.getElementById('m');
+
+	if (xScores['verticalLeftTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('a') <0) && (Game.letters.indexOf('g') <0) && (Game.letters.indexOf('m')) < 0) 
+		{
+			if ((a.innerHTML == 'X') && (g.innerHTML == 'X') && (m.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//a exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('a');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['verticalLeftTop'] = 'yes'; 
+				Game.letters.push('a', 'g','m');
+				flash(m, g, a,'green', 'red');
+			}
+		}
+	}
+
+		//verticalLeftTopHalf-g m s (g and m already selected)
+		let s = document.getElementById('s');
+
+	if (xScores['verticalLeftTopHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('g') <0) && (Game.letters.indexOf('m') <0) && (Game.letters.indexOf('s')) < 0) 
+		{
+			if ((g.innerHTML == 'X') && (m.innerHTML == 'X') && (s.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score']; 
+				xScores['verticalLeftTopHalf'] = 'yes'; 
+				Game.letters.push('s', 'g','m');
+				flash(m, g, s,'green', 'red');
+			}
+		}
+	}
+
+
+		//verticalLeftBottomHalf-m s y (m and s already selected)
+		let y = document.getElementById('y');
+
+	if (xScores['verticalLeftBottomHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('m') <0) && (Game.letters.indexOf('s') <0) && (Game.letters.indexOf('y')) < 0) 
+		{
+			if ((m.innerHTML == 'X') && (s.innerHTML == 'X') && (y.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score']; 
+				xScores['verticalLeftBottomHalf'] = 'yes'; 
+				Game.letters.push('s', 'y','m');
+				flash(m, y, s,'green', 'red');
+			}
+		}
+	}
+
+
+		//verticalLeftBottom-s y ee (s and y already selected)
+		let ee = document.getElementById('ee');
+
+	if (xScores['verticalLeftBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('s') <0) && (Game.letters.indexOf('y') <0) && (Game.letters.indexOf('ee')) < 0) 
+		{
+			if ((s.innerHTML == 'X') && (y.innerHTML == 'X') && (ee.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//ee exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('ee');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['verticalLeftBottom'] = 'yes'; 
+				Game.letters.push('s', 'y','ee');
+				flash(ee, y, s,'green', 'red');
+			}
+		}
+	}
+
+
+		//'horizontalTopMidLeft'-g h i 
+	if (xScores['horizontalTopMidLeft'] != 'yes')
+	{
+		if ((Game.letters.indexOf('g') <0) && (Game.letters.indexOf('h') <0) && (Game.letters.indexOf('i')) < 0) 
+		{
+			let g = document.getElementById('g');
+			let h = document.getElementById('h');
+			let i = document.getElementById('i');
+			if ((g.innerHTML == 'X') && (h.innerHTML == 'X') && (i.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//h exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('h');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalTopMidLeft'] = 'yes';
+				Game.letters.push('g', 'h','i');
+				flash(g, h, i,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalTopMidLeftHalf'-h i j (h and i already selected)
+	if (xScores['horizontalTopMidLeftHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('h') <0) && (Game.letters.indexOf('i') <0) && (Game.letters.indexOf('j')) < 0) 
+		{
+			let j = document.getElementById('j');
+			if ((h.innerHTML == 'X') && (i.innerHTML == 'X') && (j.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//h exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('h');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalTopMidLeftHalf'] = 'yes';
+				Game.letters.push('h', 'i','j');
+				flash(j, h, i,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalTopMidRightHalf'-i j k (i and j already selected)
+	if (xScores['horizontalTopMidRightHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('i') <0) && (Game.letters.indexOf('j') <0) && (Game.letters.indexOf('k')) < 0) 
+		{
+			let k = document.getElementById('k');
+			if ((i.innerHTML == 'X') && (j.innerHTML == 'X') && (k.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//k exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('k');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalTopMidRightHalf'] = 'yes';
+				Game.letters.push('i', 'j','k');
+				flash(j, k, i,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalTopMidRight'-j k l (all already selected)
+	if (xScores['horizontalTopMidRight'] != 'yes')
+	{
+		if ((Game.letters.indexOf('j') <0) && (Game.letters.indexOf('k') <0) && (Game.letters.indexOf('l')) < 0) 
+		{
+			if ((j.innerHTML == 'X') && (k.innerHTML == 'X') && (l.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//k exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('k');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalTopMidRight'] = 'yes';
+				Game.letters.push('l', 'j','k');
+				flash(l, j, k,'green', 'red');
+			}
+		}
+	}
+
+
+		//'horizontalTopBottomLeft'-m n o (m already selected)
+	if (xScores['horizontalTopBottomLeft'] != 'yes')
+	{
+		if ((Game.letters.indexOf('m') <0) && (Game.letters.indexOf('n') <0) && (Game.letters.indexOf('o')) < 0) 
+		{
+			let n = document.getElementById('n');
+			let o = document.getElementById('o');
+			if ((m.innerHTML == 'X') && (n.innerHTML == 'X') && (o.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//o exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('o');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalTopBottomLeft'] = 'yes';
+				Game.letters.push('m', 'n','o');
+				flash(o, n, m,'green', 'red');
+			}
+		}
+	}
+
+
+
+
+
+		//'horizontalTopBottomLeftHalf'-n o p (n and o already selected)
+	if (xScores['horizontalTopBottomLeftHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('n') <0) && (Game.letters.indexOf('o') <0) && (Game.letters.indexOf('p')) < 0) 
+		{
+			let p = document.getElementById('p');
+			if ((n.innerHTML == 'X') && (o.innerHTML == 'X') && (p.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//o exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('o');
+				//p exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalTopBottomLeftHalf'] = 'yes';
+				Game.letters.push('n', 'o','p');
+				flash(o, n, p,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalTopBottomRightHalf'-o p q (o and p already selected)
+	if (xScores['horizontalTopBottomRightHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('o') <0) && (Game.letters.indexOf('p') <0) && (Game.letters.indexOf('q')) < 0) 
+		{
+			let q = document.getElementById('q');
+			if ((o.innerHTML == 'X') && (p.innerHTML == 'X') && (q.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//o exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('o');
+				//p exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalTopBottomRightHalf'] = 'yes';
+				Game.letters.push('o', 'p','q');
+				flash(o, q, p,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalTopBottomRight'-p q r (all already selected)
+	if (xScores['horizontalTopBottomRight'] != 'yes')
+	{
+		if ((Game.letters.indexOf('p') <0) && (Game.letters.indexOf('q') <0) && (Game.letters.indexOf('r')) < 0) 
+		{
+			if ((p.innerHTML == 'X') && (q.innerHTML == 'X') && (r.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//p exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalTopBottomRight'] = 'yes';
+				Game.letters.push('p', 'q','r');
+				flash(r, q, p,'green', 'red');
+			}
+		}
+	}
+
+
+		//'horizontalBottomTopLeft'-s t u (s already selected)
+	if (xScores['horizontalBottomTopLeft'] != 'yes')
+	{
+		if ((Game.letters.indexOf('s') <0) && (Game.letters.indexOf('t') <0) && (Game.letters.indexOf('u')) < 0) 
+		{
+			let t = document.getElementById('t');
+			let u = document.getElementById('u');
+			if ((s.innerHTML == 'X') && (t.innerHTML == 'X') && (u.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('u');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomTopLeft'] = 'yes';
+				Game.letters.push('s', 't','u');
+				flash(s, t, u,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalBottomTopLeftHalf'-t u v (t an u already selected)
+	if (xScores['horizontalBottomTopLeftHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('t') <0) && (Game.letters.indexOf('u') <0) && (Game.letters.indexOf('v')) < 0) 
+		{
+			let v = document.getElementById('v');
+			if ((t.innerHTML == 'X') && (u.innerHTML == 'X') && (v.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//v exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v');
+				//u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('u');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomTopLeftHalf'] = 'yes';
+				Game.letters.push('t', 'u','v');
+				flash(v, t, u,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalBottomTopRightHalf'-u v w (u and v already selected)
+	if (xScores['horizontalBottomTopRightHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('u') <0) && (Game.letters.indexOf('v') <0) && (Game.letters.indexOf('w')) < 0) 
+		{
+			let w = document.getElementById('w');
+			if ((u.innerHTML == 'X') && (v.innerHTML == 'X') && (w.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//v exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v');
+				//u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('u');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomTopRightHalf'] = 'yes';
+				Game.letters.push('w', 'u','v');
+				flash(v, w, u,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalBottomTopRight'-v w x (all already selected)
+	if (xScores['horizontalBottomTopRight'] != 'yes')
+	{
+		if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('w') <0) && (Game.letters.indexOf('x')) < 0) 
+		{
+			if ((v.innerHTML == 'X') && (w.innerHTML == 'X') && (x.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//v exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomTopRight'] = 'yes';
+				Game.letters.push('w', 'x','v');
+				flash(v, w, x,'green', 'red');
+			}
+		}
+	}
+
+
+		//'horizontalBottomMidLeft'-y z aa (y already selected)
+	if (xScores['horizontalBottomMidLeft'] != 'yes')
+	{
+		if ((Game.letters.indexOf('y') <0) && (Game.letters.indexOf('z') <0) && (Game.letters.indexOf('aa')) < 0) 
+		{
+			let z = document.getElementById('z');
+			let aa = document.getElementById('aa');
+			if ((y.innerHTML == 'X') && (z.innerHTML == 'X') && (aa.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//z exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('z');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomMidLeft'] = 'yes';
+				Game.letters.push('y', 'z','aa');
+				flash(y, z, aa,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalBottomMidLeftHalf'-z aa bb (z an aa already selected)
+	if (xScores['horizontalBottomMidLeftHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('z') <0) && (Game.letters.indexOf('aa') <0) && (Game.letters.indexOf('bb')) < 0) 
+		{
+			let bb = document.getElementById('bb');
+			if ((z.innerHTML == 'X') && (aa.innerHTML == 'X') && (bb.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//z exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('z');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomMidLeftHalf'] = 'yes';
+				Game.letters.push('bb', 'z','aa');
+				flash(bb, z, aa,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalBottomMidRightHalf'-aa bb cc (aa and bb already selected)
+		if (xScores['horizontalBottomMidRightHalf'] != 'yes')
+		{
+		if ((Game.letters.indexOf('aa') <0) && (Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('cc')) < 0) 
+		{
+			let w = document.getElementById('w');
+			if ((aa.innerHTML == 'X') && (bb.innerHTML == 'X') && (cc.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//cc exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('cc');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomMidRightHalf'] = 'yes';
+				Game.letters.push('bb', 'cc','aa');
+				flash(bb, cc, aa,'green', 'red');
+			}
+		}
+	}
+
+		//'horizontalBottomMidRight'-bb cc dd (all already selected)
+	if (xScores['horizontalBottomMidRight'] != 'yes')
+	{
+		if ((Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('cc') <0) && (Game.letters.indexOf('dd')) < 0) 
+		{
+			if ((bb.innerHTML == 'X') && (cc.innerHTML == 'X') && (dd.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//cc exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('cc');
+				scoreX.innerHTML = xScores['score']; 
+				xScores['horizontalBottomMidRight'] = 'yes';
+				Game.letters.push('bb', 'cc','dd');
+				flash(bb, cc, dd,'green', 'red');
+
+			}
+		}
+	}
+
+
+
+
+		//verticalLeftMidTop-b h n (all already selected)
+	if (xScores['verticalLeftMidTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('b') <0) && (Game.letters.indexOf('h') <0) && (Game.letters.indexOf('n')) < 0) 
+		{
+			if ((b.innerHTML == 'X') && (h.innerHTML == 'X') && (n.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//h exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('h');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalLeftMidTop'] = 'yes';
+				Game.letters.push('b', 'h','n'); 
+				flash(b, h, n,'green', 'red');
+			}
+		}
+	}
+
+		//verticalLeftMidTopHalf-h n t (all already selected)
+		if (xScores['verticalLeftMidTopHalf'] != 'yes')
+		{
+		if ((Game.letters.indexOf('h') <0) && (Game.letters.indexOf('n') <0) && (Game.letters.indexOf('t')) < 0) 
+		{
+			if ((h.innerHTML == 'X') && (n.innerHTML == 'X') && (t.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//h exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('h');
+				scoreX.innerHTML = xScores['score'];
+				oScores['verticalLeftMidTopHalf'] = 'yes';
+				Game.letters.push('h', 'n','t');
+				flash(t, h, n,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//verticalLeftMidBottomHalf-n t z (all already selected)
+	if (xScores['verticalLeftMidBottomHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('n') <0) && (Game.letters.indexOf('t') <0) && (Game.letters.indexOf('z')) < 0) 
+		{
+			if ((n.innerHTML == 'X') && (t.innerHTML == 'X') && (z.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//z exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('z');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalLeftMidBottomHalf'] = 'yes';
+				Game.letters.push('z', 'n','t'); 
+				flash(t, z, n,'green', 'red');
+			}
+		}
+	}
+
+
+		//verticalLeftMidBottom-t z ff (all already selected)
+		if (xScores['verticalLeftMidBottom'] != 'yes')
+		{
+		if ((Game.letters.indexOf('t') <0) && (Game.letters.indexOf('z') <0) && (Game.letters.indexOf('ff')) < 0) 
+		{
+			if ((t.innerHTML == 'X') && (z.innerHTML == 'X') && (ff.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//z exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('z');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalLeftMidBottom'] = 'yes';
+				Game.letters.push('z', 'ff','t');
+				flash(t, z, ff,'green', 'red'); 
+			}
+		}
+	}
+
+		//verticalLeftRightTop-c i o (all already selected)
+	if (xScores['verticalLeftRightTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('c') <0) && (Game.letters.indexOf('i') <0) && (Game.letters.indexOf('o')) < 0) 
+		{
+			if ((c.innerHTML == 'X') && (i.innerHTML == 'X') && (o.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//o exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('o');
+				scoreO.innerHTML = xScores['score'];
+				xScores['verticalLeftRightTop'] = 'yes';
+				Game.letters.push('c', 'i','o');
+				flash(c, i, o,'green', 'red'); 
+
+			}
+		}
+	}
+
+		//verticalLeftRightTopHalf-i o u (all already selected)
+	if (xScores['verticalLeftRightTopHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('i') <0) && (Game.letters.indexOf('o') <0) && (Game.letters.indexOf('u')) < 0) 
+		{
+			if ((i.innerHTML == 'X') && (o.innerHTML == 'X') && (u.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//o exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('o');
+				//u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('u');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalLeftRightTopHalf'] = 'yes'; 
+				Game.letters.push('u', 'i','o');
+				flash(u, i, o,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//verticalLeftRightBottomHalf-o u aa (all already selected)
+	if (xScores['verticalLeftRightBottomHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('o') <0) && (Game.letters.indexOf('u') <0) && (Game.letters.indexOf('aa')) < 0) 
+		{
+			if ((o.innerHTML == 'X') && (u.innerHTML == 'X') && (aa.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//o exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('o');
+				//u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('u');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalLeftRightBottomHalf'] = 'yes'; 
+				Game.letters.push('u', 'aa','o');
+				flash(u, aa, o,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//verticalLeftRightBottom-u aa gg (all already selected)
+	if (xScores['verticalLeftRightBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('u') <0) && (Game.letters.indexOf('aa') <0) && (Game.letters.indexOf('gg')) < 0) 
+		{
+			if ((u.innerHTML == 'X') && (aa.innerHTML == 'X') && (gg.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('u');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalLeftRightBottom'] = 'yes'; 
+				Game.letters.push('u', 'aa','gg');
+				flash(u, aa, gg,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//verticalRightLeftTop-d j p (all already selected)
+	if (xScores['verticalRightLeftTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('d') <0) && (Game.letters.indexOf('j') <0) && (Game.letters.indexOf('p')) < 0) 
+		{
+			if ((d.innerHTML == 'X') && (j.innerHTML == 'X') && (p.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//p exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightLeftTop'] = 'yes'; 
+				Game.letters.push('d', 'j','p');
+				flash(d, j, p,'green', 'red');  
+			}
+		}
+	}
+
+		//verticalRightLeftTopHalf-j p v (all already selected)
+	if (xScores['verticalRightLeftTopHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('j') <0) && (Game.letters.indexOf('p')) < 0) 
+		{
+			if ((j.innerHTML == 'X') && (p.innerHTML == 'X') && (v.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//v exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v');
+				//p exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightLeftTopHalf'] = 'yes';
+				Game.letters.push('v', 'j','p');
+				flash(v, j, p,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//verticalRightLeftBottomHalf-p v bb (all already selected)
+	if (xScores['verticalRightLeftBottomHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('p') <0) && (Game.letters.indexOf('bb')) < 0) 
+		{
+			if ((p.innerHTML == 'X') && (v.innerHTML == 'X') && (bb.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//v exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v');
+				//p exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightLeftBottomHalf'] = 'yes'; 
+				Game.letters.push('v', 'bb','p');
+				flash(v, bb, p,'green', 'red');
+			}
+		}
+	}
+
+
+		//verticalRightLeftBottom-v bb hh (all already selected)
+	if (xScores['verticalRightLeftBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('hh')) < 0) 
+		{
+			if ((v.innerHTML == 'X') && (bb.innerHTML == 'X') && (hh.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//v exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightLeftBottom'] = 'yes'; 
+				Game.letters.push('v', 'bb','hh');
+				flash(v, bb, hh,'green', 'red');
+
+			}
+		}
+	}
+
+
+		//verticalRightMidTop-e k q (all already selected)
+	if (xScores['verticalRightMidTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('e') <0) && (Game.letters.indexOf('k') <0) && (Game.letters.indexOf('q')) < 0) 
+		{
+			if ((e.innerHTML == 'X') && (k.innerHTML == 'X') && (q.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//k exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('k');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightMidTop'] = 'yes';
+				Game.letters.push('e', 'k','q');
+				flash(e, k, q,'green', 'red'); 
+			}
+		}
+	}
+
+		//verticalRightMidTopHalf-k q w (all already selected)
+	if (xScores['verticalRightMidTopHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('k') <0) && (Game.letters.indexOf('w') <0) && (Game.letters.indexOf('q')) < 0) 
+		{
+			if ((k.innerHTML == 'X') && (q.innerHTML == 'X') && (w.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//k exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('k');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightMidTopHalf'] = 'yes'; 
+				Game.letters.push('w', 'k','q');
+				flash(w, k, q,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//verticalRightMidBottomHalf-q w cc (all already selected)
+	if (xScores['verticalRightMidBottomHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('q') <0) && (Game.letters.indexOf('w') <0) && (Game.letters.indexOf('cc')) < 0) 
+		{
+			if ((q.innerHTML == 'X') && (w.innerHTML == 'X') && (cc.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//cc exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('cc');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightMidBottomHalf'] = 'yes'; 
+				Game.letters.push('w', 'cc','q');
+				flash(w, cc, q,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//verticalRightMidBottom-w cc ii (all already selected)
+	if (xScores['verticalRightMidBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('cc') <0) && (Game.letters.indexOf('w') <0) && (Game.letters.indexOf('ii')) < 0) 
+		{
+			if ((w.innerHTML == 'X') && (cc.innerHTML == 'X') && (ii.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//cc exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('cc');
+				scoreX.innerHTML = xScores['score'];
+				xScores['verticalRightMidBottom'] = 'yes'; 
+				Game.letters.push('w', 'cc','ii');
+				flash(w, cc, ii,'green', 'red');
+			}
+		}
+	}
+
+
+
+		//------------------The diagonal back--------------------
+
+		//diagonalBackLargestTop-a h o (all already selected)
+	if (xScores['diagonalBackLargestTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('a') <0) && (Game.letters.indexOf('o') <0) && (Game.letters.indexOf('h')) < 0) 
+		{
+			if ((a.innerHTML == 'X') && (h.innerHTML == 'X') && (o.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//a,h,o exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('a','h','o');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackLargestTop'] = 'yes'; 
+				Game.letters.push('a', 'h','o');
+				flash(a, h, o,'green', 'red');
+			}
+		}
+	}
+
+		//diagonalBackLargestTopHalf-h o v (all already selected)
+	if (xScores['diagonalBackLargestTopHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('h') <0) && (Game.letters.indexOf('v') <0) && (Game.letters.indexOf('o')) < 0) 
+		{
+
+			if ((h.innerHTML == 'X') && (o.innerHTML == 'X') && (v.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//h,o,v exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v','h','o');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackLargestTopHalf'] = 'yes'; 
+				Game.letters.push('v', 'h','o');
+				flash(o, h, v,'green', 'red');
+			}
+		}
+	}
+
+
+		//diagonalBackLargestBottomHalf-o v cc (all already selected)
+	if (xScores['diagonalBackLargestBottomHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('o') <0) && (Game.letters.indexOf('v') <0) && (Game.letters.indexOf('cc')) < 0) 
+		{
+			if ((o.innerHTML == 'X') && (v.innerHTML == 'X') && (cc.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//cc,v,o exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v','cc','o');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackLargestBottomHalf'] = 'yes';
+				Game.letters.push('v', 'cc','o');
+				flash(v, cc, o,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//diagonalBackLargestBottom-v cc jj (all already selected)
+	if (xScores['diagonalBackLargestBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('cc') <0) && (Game.letters.indexOf('jj')) < 0) 
+		{
+
+			if ((v.innerHTML == 'X') && (cc.innerHTML == 'X') && (jj.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//cc,v,jj exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v','cc','jj');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackLargestBottom'] = 'yes'; 
+				Game.letters.push('v', 'cc','jj');
+				flash(v, cc, jj,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//-----------------ABOVE THE DIAGONAL BACK-----------------------
+		//diagonalBackTopSmallTop-b i p (all already selected)
+	if (xScores['diagonalBackTopSmallTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('b') <0) && (Game.letters.indexOf('p') <0) && (Game.letters.indexOf('i')) < 0) 
+		{
+
+			if ((b.innerHTML == 'X') && (i.innerHTML == 'X') && (p.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//p exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackTopSmallTop'] = 'yes';
+				Game.letters.push('b', 'i','p'); 
+				flash(b, i, p,'green', 'red');
+			}
+		}
+	}
+
+		//diagonalBackTopSmallMid-i p w (all already selected)
+	if (xScores['diagonalBackTopSmallMid'] != 'yes')
+	{
+		if ((Game.letters.indexOf('i') <0) && (Game.letters.indexOf('w') <0) && (Game.letters.indexOf('p')) < 0) 
+		{
+
+			if ((i.innerHTML == 'X') && (p.innerHTML == 'X') && (w.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//p exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackTopSmallMid'] = 'yes'; 
+				Game.letters.push('w', 'i','p'); 
+				flash(w, i, p,'green', 'red');
+			}
+		}
+	}
+
+
+		//diagonalBackTopSmallBottom-p w dd (all already selected)
+	if (xScores['diagonalBackTopSmallBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('p') <0) && (Game.letters.indexOf('w') <0) && (Game.letters.indexOf('dd')) < 0) 
+		{
+
+			if ((p.innerHTML == 'X') && (w.innerHTML == 'X') && (dd.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//p exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackTopSmallBottom'] = 'yes';
+				Game.letters.push('w', 'dd','p');
+				flash(w, dd, p,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//diagonalBackTopSmallerTop-c j q (all already selected)
+	if (xScores['diagonalBackTopSmallerTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('c') <0) && (Game.letters.indexOf('q') <0) && (Game.letters.indexOf('j')) < 0) 
+		{
+			if ((c.innerHTML == 'X') && (j.innerHTML == 'X') && (q.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackTopSmallerTop'] = 'yes'; 
+				Game.letters.push('c', 'j','q');
+				flash(c, j, q,'green', 'red');
+			}
+		}
+	}
+
+
+		//diagonalBackTopSmallerBottom-j q x (all already selected)
+	if (xScores['diagonalBackTopSmallerBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('j') <0) && (Game.letters.indexOf('q') <0) && (Game.letters.indexOf('x')) < 0) 
+		{
+			if ((j.innerHTML == 'X') && (q.innerHTML == 'X') && (x.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackTopSmallerBottom'] = 'yes'; 
+				Game.letters.push('x', 'j','q');
+				flash(x, j, q,'green', 'red');
+			}
+		}
+	}
+
+		//diagonalBackTopSmallest-d k r (all already selected)
+	if (xScores['diagonalBackTopSmallest'] != 'yes')
+	{
+		if ((Game.letters.indexOf('d') <0) && (Game.letters.indexOf('r') <0) && (Game.letters.indexOf('k')) < 0) 
+		{
+			if ((d.innerHTML == 'X') && (k.innerHTML == 'X') && (r.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//k exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('k');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackTopSmallest'] = 'yes'; 
+				Game.letters.push('d', 'k','r');
+				flash(d, k, r,'green', 'red');
+			}
+		}
+	}
+
+
+
+		//------------------BELOW THE DIAGONAL BACK--------------------
+		//diagonalBackBottomSmallTop-g n u (all already selected)
+	if (xScores['diagonalBackBottomSmallTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('g') <0) && (Game.letters.indexOf('u') <0) && (Game.letters.indexOf('n')) < 0) 
+		{
+			if ((g.innerHTML == 'X') && (n.innerHTML == 'X') && (u.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('u');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackBottomSmallTop'] = 'yes'; 
+				Game.letters.push('g', 'n','u');
+				flash(g, n, u,'green', 'red');
+			}
+		}
+	}
+
+		//diagonalBackBottomSmallMid-n u bb (all already selected)
+	if (xScores['diagonalBackBottomSmallMid'] != 'yes')
+	{
+		if ((Game.letters.indexOf('n') <0) && (Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('u')) < 0) 
+		{
+			if ((n.innerHTML == 'X') && (u.innerHTML == 'X') && (bb.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('u');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackBottomSmallMid'] = 'yes';
+				Game.letters.push('bb', 'n','u'); 
+				flash(bb, n, u,'green', 'red');
+			}
+		}
+	}
+
+
+		//diagonalBackBottomSmallBottom-u bb ii (all already selected)
+	if (xScores['diagonalBackBottomSmallBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('u') <0) && (Game.letters.indexOf('ii') <0) && (Game.letters.indexOf('bb')) < 0) 
+		{
+			if ((u.innerHTML == 'X') && (bb.innerHTML == 'X') && (ii.innerHTML == 'X'))
+			{
+				oScores['score'] += 1;
+				//u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('u');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackBottomSmallBottom'] = 'yes';
+				Game.letters.push('ii', 'bb','u');
+				flash(bb, ii, u,'green', 'red'); 
+			}
+		}
+	}
+
+
+		
+		//diagonalBackBottomSmallerTop-m t aa (all already selected)
+	if (xScores['diagonalBackBottomSmallerTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('m') <0) && (Game.letters.indexOf('aa') <0) && (Game.letters.indexOf('t')) < 0) 
+		{
+			if ((m.innerHTML == 'X') && (t.innerHTML == 'X') && (aa.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackBottomSmallerTop'] = 'yes'; 
+				Game.letters.push('m', 't','aa');
+				flash(m, t, aa,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//diagonalBackBottomSmallerBottom-t aa hh (all already selected)
+	if (xScores['diagonalBackBottomSmallerBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('t') <0) && (Game.letters.indexOf('hh') <0) && (Game.letters.indexOf('aa')) < 0) 
+		{
+			if ((t.innerHTML == 'X') && (aa.innerHTML == 'X') && (hh.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackBottomSmallerBottom'] = 'yes';
+				Game.letters.push('hh', 't','aa');
+				flash(hh, t, aa,'green', 'red'); 
+			}
+		}
+	}
+
+		//diagonalBackBottomSmallest-s z gg (all already selected)
+	if (xScores['diagonalBackBottomSmallest'] != 'yes')
+	{
+		if ((Game.letters.indexOf('s') <0) && (Game.letters.indexOf('gg') <0) && (Game.letters.indexOf('z')) < 0) 
+		{
+			if ((s.innerHTML == 'X') && (z.innerHTML == 'X') && (gg.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//z exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('z');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalBackBottomSmallest'] = 'yes';
+				Game.letters.push('s', 'z','gg');
+				flash(s, z, gg,'green', 'red');  
+			}
+		}
+	}
+
+
+		//------------------THE DIAGONAL FORWARD--------------------
+		//diagonalForwardLargestTop-f k p (all already selected)
+	if (xScores['diagonalForwardLargestTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('f') <0) && (Game.letters.indexOf('p') <0) && (Game.letters.indexOf('k')) < 0) 
+		{
+			if ((f.innerHTML == 'X') && (k.innerHTML == 'X') && (p.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//p,k,f exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p','k','f');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardLargestTop'] = 'yes'; 
+				Game.letters.push('f', 'k','p');
+				flash(f, k, p,'green', 'red'); 
+			}
+		}
+	}
+
+		//diagonalForwardLargestTopHalf-k p u (all already selected)
+	if (xScores['diagonalForwardLargestTopHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('k') <0) && (Game.letters.indexOf('p') <0) && (Game.letters.indexOf('u')) < 0) 
+		{
+			if ((k.innerHTML == 'X') && (p.innerHTML == 'X') && (u.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//p,k,u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p','k','u');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardLargestTopHalf'] = 'yes';
+				Game.letters.push('u', 'k','p');
+				flash(u, k, p,'green', 'red');  
+			}
+		}
+	}
+
+
+		//diagonalForwardLargestBottomHalf-p u z (all already selected)
+	if (xScores['diagonalForwardLargestBottomHalf'] != 'yes')
+	{
+		if ((Game.letters.indexOf('p') <0) && (Game.letters.indexOf('u') <0) && (Game.letters.indexOf('z')) < 0) 
+		{
+			if ((p.innerHTML == 'X') && (u.innerHTML == 'X') && (z.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//p,z,u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('p','z','u');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardLargestBottomHalf'] = 'yes';
+				Game.letters.push('u', 'z','p');
+				flash(u, z, p,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//diagonalForwardLargestBottom-u z ee (all already selected)
+	if (xScores['diagonalForwardLargestBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('u') <0) && (Game.letters.indexOf('z') <0) && (Game.letters.indexOf('ee')) < 0) 
+		{
+			if ((u.innerHTML == 'X') && (z.innerHTML == 'X') && (ee.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//ee,z,u exists in the diagonalForwardMatch
+				xScores['diagonalForwardMatch'].push('ee','z','u');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardLargestBottom'] = 'yes';
+				Game.letters.push('u', 'z','ee');
+				flash(u, z, ee,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//-----------------ABOVE THE DIAGONAL FORWARD-----------------------
+		//diagonalForwardTopSmallTop-e j o (all already selected)
+	if (xScores['diagonalForwardTopSmallTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('e') <0) && (Game.letters.indexOf('j') <0) && (Game.letters.indexOf('o')) < 0) 
+		{
+			if ((e.innerHTML == 'X') && (j.innerHTML == 'X') && (o.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//o exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('o');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardTopSmallTop'] = 'yes';
+				Game.letters.push('e', 'j','o');
+				flash(e, j, o,'green', 'red'); 
+			}
+		}
+	}
+
+		//diagonalForwardTopSmallMid-j o t (all already selected)
+	if (xScores['diagonalForwardTopSmallMid'] != 'yes')
+	{
+		if ((Game.letters.indexOf('j') <0) && (Game.letters.indexOf('t') <0) && (Game.letters.indexOf('o')) < 0) 
+		{
+			if ((j.innerHTML == 'X') && (o.innerHTML == 'X') && (t.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//o exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('o');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardTopSmallMid'] = 'yes'; 
+				Game.letters.push('t', 'j','o');
+				flash(t, j, o,'green', 'red');
+			}
+		}
+	}
+
+
+		//diagonalForwardTopSmallBottom-o t y (all already selected)
+	if (xScores['diagonalForwardTopSmallBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('o') <0) && (Game.letters.indexOf('t') <0) && (Game.letters.indexOf('y')) < 0) 
+		{
+			if ((o.innerHTML == 'X') && (t.innerHTML == 'X') && (y.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//o exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('o');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardTopSmallBottom'] = 'yes';
+				Game.letters.push('t', 'y','o');
+				flash(t, y, o,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//diagonalForwardTopSmallerTop-d i n (all already selected)
+	if (xScores['diagonalForwardTopSmallerTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('d') <0) && (Game.letters.indexOf('i') <0) && (Game.letters.indexOf('n')) < 0) 
+		{
+			if ((d.innerHTML == 'X') && (i.innerHTML == 'X') && (n.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardTopSmallerTop'] = 'yes';
+				Game.letters.push('d', 'i','n');
+				flash(d, i, n,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//diagonalForwardTopSmallerBottom-i n s (all already selected)
+	if (xScores['diagonalForwardTopSmallerBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('i') <0) && (Game.letters.indexOf('n') <0) && (Game.letters.indexOf('s')) < 0) 
+		{
+			if ((i.innerHTML == 'X') && (n.innerHTML == 'X') && (s.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardTopSmallerBottom'] = 'yes';
+				Game.letters.push('s', 'i','n');
+				flash(s, i, n,'green', 'red');  
+			}
+		}
+	}
+
+		//diagonalForwardTopSmallest-c h m (all already selected)
+	if (xScores['diagonalForwardTopSmallest'] != 'yes')
+	{
+		if ((Game.letters.indexOf('c') <0) && (Game.letters.indexOf('h') <0) && (Game.letters.indexOf('m')) < 0) 
+		{
+			if ((c.innerHTML == 'X') && (h.innerHTML == 'X') && (m.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//h exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('h');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardTopSmallest'] = 'yes'; 
+				Game.letters.push('c', 'h','m');
+				flash(c, h, m,'green', 'red');
+			}
+		}
+	}
+
+
+		//------------------BELOW THE DIAGONAL FORWARD--------------------
+		//diagonalForwardBottomSmallTop-l q v (all already selected)
+	if (xScores['diagonalForwardBottomSmallTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('q') <0) && (Game.letters.indexOf('l')) < 0) 
+		{
+			if ((l.innerHTML == 'X') && (q.innerHTML == 'X') && (v.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//v exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardBottomSmallTop'] = 'yes';
+				Game.letters.push('l', 'q','v');
+				flash(l, q, v,'green', 'red'); 
+			}
+		}
+	}
+
+		//diagonalForwardBottomSmallMid-q v aa (all already selected)
+	if (xScores['diagonalForwardBottomSmallMid'] != 'yes')
+	{
+		if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('q') <0) && (Game.letters.indexOf('aa')) < 0) 
+		{
+			if ((q.innerHTML == 'X') && (v.innerHTML == 'X') && (aa.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//v exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardBottomSmallMid'] = 'yes';
+				Game.letters.push('aa', 'q','v');
+				flash(aa, q, v,'green', 'red'); 
+			}
+		}
+	}
+
+
+		//diagonalForwardBottomSmallBottom-v aa ff (all already selected)
+	if (xScores['diagonalForwardBottomSmallBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('v') <0) && (Game.letters.indexOf('ff') <0) && (Game.letters.indexOf('aa')) < 0) 
+		{
+			if ((v.innerHTML == 'X') && (aa.innerHTML == 'X') && (ff.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//v exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('v');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardBottomSmallBottom'] = 'yes';
+				Game.letters.push('aa', 'ff','v');
+				flash(aa, ff, v,'green', 'red'); 
+			}
+		}
+	}
+
+
+		
+		//diagonalForwardBottomSmallerTop-r w bb (all already selected)
+	if (xScores['diagonalForwardBottomSmallerTop'] != 'yes')
+	{
+		if ((Game.letters.indexOf('r') <0) && (Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('w')) < 0) 
+		{
+			if ((r.innerHTML == 'X') && (w.innerHTML == 'X') && (bb.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardBottomSmallerTop'] = 'yes'; 
+				Game.letters.push('r', 'w','bb');
+				flash(bb, r, w,'green', 'red');
+			}
+		}
+	}
+
+
+		//diagonalForwardBottomSmallerBottom-w bb gg (all already selected)
+	if (xScores['diagonalForwardBottomSmallerBottom'] != 'yes')
+	{
+		if ((Game.letters.indexOf('bb') <0) && (Game.letters.indexOf('w') <0) && (Game.letters.indexOf('gg')) < 0) 
+		{
+			if ((w.innerHTML == 'X') && (bb.innerHTML == 'X') && (gg.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardBottomSmallerBottom'] = 'yes';
+				Game.letters.push('gg', 'w','bb');
+				flash(bb, gg, w,'green', 'red'); 
+			}
+		}
+	}
+
+		//diagonalForwardBottomSmallest-x cc hh (all already selected)
+	if (xScores['diagonalForwardBottomSmallest'] != 'yes')
+	{
+		if ((Game.letters.indexOf('x') <0) && (Game.letters.indexOf('hh') <0) && (Game.letters.indexOf('cc')) < 0) 
+		{
+			if ((x.innerHTML == 'X') && (cc.innerHTML == 'X') && (hh.innerHTML == 'X'))
+			{
+				xScores['score'] += 1;
+				//cc exists in the diagonalBackwardMatch
+				xScores['diagonalBackwardMatch'].push('cc');
+				scoreX.innerHTML = xScores['score'];
+				xScores['diagonalForwardBottomSmallest'] = 'yes'; 
+				Game.letters.push('x', 'cc','hh');
+				flash(x, cc, hh,'green', 'red'); 
+			}
+		}
+	}
+
+
+
+	/*------------check if player X has bagged a gold point----------------*/
+		if (xScores['diagonalBackGold'] == 'no') 
+		{
+			let diagonalBackGold = ['a','h','o','v','cc','jj'];
+
+			let goldDiagonalBack = false;
+
+			for (let i = 0; i<diagonalBackGold.length;i++)
+			{
+				if(inArray(diagonalBackGold[i], xScores['diagonalBackwardMatch']))
+				{
+					goldDiagonalBack = true;
+				}
+				else
+				{
+					goldDiagonalBack = false;
+					break;
+				}
+			}
+
+
+
+			if (goldDiagonalBack)
+			{
+				flashGold('diagonalBackGoldRed');
+			}
+		}
+
+
+
+
+
+
+
+		/*------------check if player X has bagged a diagonal forward gold point----------------*/
+		if (xScores['diagonalFrontGold'] == 'no') 
+		{
+			let diagonalForwardGold = ['f','k','p','u','z','ee'];
+
+			let goldDiagonalForward = false;
+
+			for (let i = 0; i<diagonalForwardGold.length;i++)
+			{
+				if(inArray(diagonalForwardGold[i], xScores['diagonalForwardMatch']))
+				{
+					goldDiagonalForward = true;
+				}
+				else
+				{
+					goldDiagonalForward = false;
+					break;
+				}
+			}
+
+
+
+			if (goldDiagonalForward)
+			{
+				flashGold('diagonalForwardGoldRed');
+			}
+		}
+
+
+
+
+
+
+		checkScore();
+	}
+
+</script>
+</body>
+</html>
