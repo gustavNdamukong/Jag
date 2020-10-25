@@ -8,3 +8,6 @@ This a game for two players
 A match of three squares earns A player 1 point
 An alignment of three squares, where one of the squares was already used in a previous match is not a match.
 Matching 6 squares diagonally across the board earns the player 8 points in addition to whatever points they earned from matching any three of the squares on the diagonal line.
+
+# Note
+I will be converting it into a networked game using sockets.io and hosted on Heroku, so two players can play remotely. 
